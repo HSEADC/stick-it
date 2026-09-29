@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+
+/* псевдокласс */
+:root {
+  --c-cream: #f7f1ef;
+  --c-green: #1e3a2b;
+  --c-pink: #ffc2d1;
+  --c-liliac: #b9a6f2;
+  --c-pink-soft: #ffc1d1;
+  --c-butter: #ffd66b;
+  --c-lime: #c9e265;
+  --c-peach: #ffc98f;
+
+  --gap: clamp(16px, 4vw, 56px);
+  --radius: clamp(16px, 2vw, 28 px);
+}
+
+html {
+  font-size: calc(1vw / 14.4);
+}
+body {
+  font-family: 'PT Root UI', Arial, Helvetica, sans-serif;
+  font-size: 18rem;
+}
+
+/* заглушка */
+.index {
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background-color: var(--c-cream);
+  color: var(--c-green);
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+h3 {
+  font-weight: 500;
+}
+
+svg {
+  display: block;
+}
+
+/* стили для ститьи */
+
+.article__header,
+.article__content {
+  max-width: 1000rem;
+  margin: 0 auto;
+  padding: 64rem 48rem;
+}
+.backlink {
+  color: #5c5c66;
+  padding: 3rem 6rem;
+  font-weight: 500;
+  transition: color ease 0.6s;
+}
+.backlink::before {
+  content: '← ';
+}
+.backlink:hover {
+  color: #0909b3;
+}
+.article__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rem;
+  margin: 12rem 0;
+}
+.article__tag {
+  font-size: 13rem;
+  border-radius: 30rem;
+  border: 1rem solid #f4f4f4;
+  padding: 6rem 14rem;
+  color: #5c5c66;
+  background-color: #f4f4f4;
+}
+.article__title {
+  font-size: 64rem;
+  margin: 32rem 0 16rem;
+}
+.article__lead {
+  font-size: 26rem;
+  line-height: 1.5;
+  max-width: 700rem;
+  color: #5c5c66;
+}
+.article__content--image {
+  width: 100%;
+  border-radius: 18rem;
+  max-width: 720rem;
+  display: block;
+  margin: 0 auto;
+}
+img + .article__content--header {
+  margin-top: 128rem;
+}
+.article__content--header {
+  font-size: 32rem;
+  margin: 48rem 0 16rem;
+}
+.article__content--text,
+.article__content--list {
+  line-height: 1.6;
+}
+.article__content--list {
+  list-style-type: square;
+  margin-left: 20rem;
+}
+
+/* стили для заглушки */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 0 var(--gap);
+  /* вертикаль, горизонталь */
+  display: flex;
+  width: 100%;
+  height: 82rem;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  font-weight: 800;
+  font-size: 20rem;
+}
+
+.logo__icon {
+  width: 30rem;
+  height: 30rem;
+  fill: var(--c-pink);
+  /* заливка для свг */
+  transition: transform 0.8s ease-out;
+}
+
+.header__logo:hover .logo__icon {
+  transform: rotate(180deg) scale(1.1);
+}
