@@ -1,8 +1,7 @@
 {
-  "name": "2.1_module",
+  "name": "stuck",
   "version": "1.0.0",
-  "author": "Anna Kasmachova",
-  "license": "MIT",
+  "author": "team",
   "type": "module",
   "scripts": {
     "dev": "vite",
