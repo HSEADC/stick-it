@@ -11,6 +11,22 @@ const pages = {
     file: 'index.html',
     chunks: ['/javascripts/index.js', '/javascripts/allStyles.js']
   },
+  articles: {
+    file: 'pages/articles.html',
+    chunks: ['/javascripts/index.js', '/javascripts/allStyles.js']
+  },
+  dictionary: {
+    file: 'pages/dictionary.html',
+    chunks: ['/javascripts/index.js', '/javascripts/allStyles.js']
+  },
+  guides: {
+    file: 'pages/guides.html',
+    chunks: ['/javascripts/index.js', '/javascripts/allStyles.js']
+  },
+  about: {
+    file: 'pages/about.html',
+    chunks: ['/javascripts/index.js', '/javascripts/allStyles.js']
+  },
   aloe: {
     file: 'pages/articles/aloe.html',
     chunks: ['/javascripts/index.js', '/javascripts/allStyles.js']
