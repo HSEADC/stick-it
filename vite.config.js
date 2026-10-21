@@ -26,10 +26,6 @@ const pages = {
   about: {
     file: 'pages/about.html',
     chunks: ['/javascripts/index.js', '/javascripts/allStyles.js']
-  },
-  aloe: {
-    file: 'pages/articles/aloe.html',
-    chunks: ['/javascripts/index.js', '/javascripts/allStyles.js']
   }
 };
 

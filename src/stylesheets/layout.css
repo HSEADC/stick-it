@@ -13,11 +13,11 @@
   --c-grey: #2c2825;
 
   --gap: clamp(16px, 4vw, 56px);
-  --radius: clamp(16px, 2vw, 28 px);
+  --radius: clamp(16px, 2vw, 28px);
 }
 
 html {
-  font-size: calc(1vw / 14.4);
+  font-size: calc(1vw / 12.8);
 }
 body {
   font-family: 'PT Root UI', Arial, Helvetica, sans-serif;
