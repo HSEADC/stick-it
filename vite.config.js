@@ -61,7 +61,7 @@ function pageChunksPlugin() {
 
 export default defineConfig(({ command }) => ({
   root,
-  base: command === 'build' ? '' : '',
+  base: '/stick-it/',
   plugins: [pageChunksPlugin()],
   build: {
     outDir,
