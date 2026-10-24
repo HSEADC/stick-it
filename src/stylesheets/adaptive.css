@@ -1,0 +1,780 @@
+/* планшет */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .filters {
+    justify-content: space-between;
+  }
+
+  .filters__button {
+    height: 57rem;
+    font-size: 27rem;
+  }
+
+  .filters__button[data-filter='all'] {
+    width: 247rem;
+  }
+
+  .filters__button[data-filter='general'] {
+    width: 290rem;
+  }
+
+  .filters__button[data-filter='materials'] {
+    width: 224rem;
+  }
+
+  .filters__button[data-filter='properties'] {
+    width: 204rem;
+  }
+
+  .filters__button[data-filter='placement'] {
+    width: 262rem;
+  }
+}
+
+/* телефон */
+
+@media (max-width: 600px) {
+  html {
+    font-size: calc(100vw / 390);
+  }
+
+  /* чтобы убрать прокрутку вбок */
+  main {
+    overflow-x: clip;
+  }
+
+  /* хедер и бургер */
+  .header {
+    padding: 30rem 30rem 0;
+  }
+
+  .header__logo img {
+    width: 84rem;
+  }
+
+  .header__burger {
+    position: fixed;
+    top: 30rem;
+    right: 30rem;
+    z-index: 11;
+    width: 40rem;
+    height: 27rem;
+  }
+
+  .header__burger::before,
+  .header__burger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    background-color: var(--c-white);
+    border-radius: 4rem;
+    transition: transform 0.6s ease;
+  }
+
+  .header__burger::before {
+    top: 0;
+    box-shadow: 0 23rem var(--c-white);
+  }
+
+  .header__burger::after {
+    top: 11.5rem;
+  }
+
+  /* меню в крестик */
+  .header__burger.active::before {
+    top: 11.5rem;
+    box-shadow: none;
+    transform: rotate(45deg);
+  }
+
+  .header__burger.active::after {
+    transform: rotate(-45deg);
+  }
+
+  /* меню на весь экран (спрятано) */
+  .header__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    gap: 40rem;
+    padding: 200rem 30rem 0;
+    background-color: var(--c-grey);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  body:has(#burger.active) .header__nav {
+    transform: translateX(0);
+  }
+
+  .header__link {
+    align-self: flex-start;
+    font-size: 32rem;
+  }
+
+  .header__link--active::before {
+    width: 207rem;
+    height: 93rem;
+  }
+
+  /* словарь */
+  /* первый экран */
+  main {
+    padding: 0 15rem;
+  }
+
+  .hero {
+    height: 572rem;
+    margin-top: 26rem;
+    padding: 43rem 15rem 0;
+    text-align: center;
+    border-radius: 30rem;
+  }
+
+  .hero__title {
+    font-size: 67rem;
+  }
+
+  .hero__subtitle {
+    width: auto;
+    margin-top: 20rem;
+    font-size: 18rem;
+  }
+
+  /* стикеры сверху */
+  .hero__stickers {
+    top: 285rem;
+    right: auto;
+    left: -12rem;
+    width: 680rem;
+    height: 463rem;
+    transform: scale(0.6);
+    transform-origin: top left;
+  }
+
+  /* фильтры в 3 строки*/
+  .filters {
+    flex-wrap: wrap;
+    gap: 10rem;
+    margin-top: 45rem;
+  }
+
+  .filters__button {
+    height: 38rem;
+    font-size: 19rem;
+  }
+
+  .filters__button[data-filter='all'] {
+    width: 156rem;
+  }
+
+  .filters__button[data-filter='general'] {
+    width: 187rem;
+  }
+
+  .filters__button[data-filter='materials'] {
+    width: 146rem;
+  }
+
+  .filters__button[data-filter='properties'] {
+    width: 132rem;
+  }
+
+  .filters__button[data-filter='placement'] {
+    width: 170rem;
+  }
+
+  /* карточуки в одну колонку */
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 10rem;
+    margin-top: 27rem;
+  }
+
+  .card__button {
+    height: 250rem;
+    padding: 54rem 10rem;
+    border-width: 3rem;
+  }
+
+  .card__tag {
+    height: 33rem;
+    padding: 0 20rem;
+    font-size: 15rem;
+  }
+
+  .card__title {
+    max-width: 330rem;
+    font-size: 36rem;
+  }
+
+  /* окошко термина */
+  .term {
+    width: 360rem;
+    height: 560rem;
+    padding: 90rem 16rem 50rem;
+    border-width: 4rem;
+  }
+
+  .term__tag {
+    height: 37rem;
+    font-size: 17rem;
+  }
+
+  .card[data-filter='general'] .term__tag {
+    width: 182rem;
+  }
+
+  .card[data-filter='materials'] .term__tag {
+    width: 141rem;
+  }
+
+  .card[data-filter='properties'] .term__tag {
+    width: 127rem;
+  }
+
+  .card[data-filter='placement'] .term__tag {
+    width: 165rem;
+  }
+
+  .term__title {
+    font-size: 35rem;
+  }
+
+  .term__text {
+    width: 300rem;
+    font-size: 22rem;
+  }
+
+  .term__close {
+    top: 27rem;
+    left: 22rem;
+    width: 34rem;
+    height: 34rem;
+  }
+
+  .term__close::before,
+  .term__close::after {
+    height: 5rem;
+    margin-top: -2.5rem;
+  }
+
+  /* подвал */
+  .footer {
+    height: 688rem;
+    margin-top: 40rem;
+    border-radius: 30rem 30rem 0 0;
+  }
+
+  .footer__school,
+  .footer__teachers {
+    top: 24rem;
+    font-size: 13rem;
+  }
+
+  .footer__school {
+    left: 15rem;
+    width: 130rem;
+  }
+
+  .footer__teachers {
+    left: 240rem;
+  }
+
+  .footer__nav {
+    top: 80rem;
+    left: 15rem;
+    gap: 60rem;
+    font-size: 17rem;
+  }
+
+  .footer__form {
+    top: 161rem;
+    left: 30rem;
+    width: 330rem;
+    gap: 13rem 8rem;
+  }
+
+  .footer__form-title {
+    font-size: 34rem;
+    white-space: normal;
+  }
+
+  .footer__input {
+    width: 253rem;
+    height: 42rem;
+    padding: 0 20rem;
+    font-size: 15rem;
+    border-width: 2rem;
+  }
+
+  .footer__submit {
+    width: 68rem;
+    height: 42rem;
+  }
+
+  .footer__message {
+    font-size: 14rem;
+  }
+
+  .footer__social {
+    top: 352rem;
+    left: 128rem;
+    gap: 22rem;
+  }
+
+  .footer__social img {
+    height: 49rem;
+  }
+
+  .footer__mascot {
+    top: 429rem;
+    left: -13rem;
+    width: 192rem;
+  }
+
+  .footer__name--anya {
+    top: 513rem;
+    left: 120rem;
+    width: 167rem;
+  }
+
+  .footer__name--masha {
+    top: 532rem;
+    left: 229rem;
+    width: 120rem;
+  }
+
+  .footer__name--kolya {
+    top: 584rem;
+    left: 131rem;
+    width: 202rem;
+  }
+
+  .footer__hash {
+    top: 550rem;
+    left: -15rem;
+    width: 50rem;
+  }
+
+  .footer__at {
+    top: 617rem;
+    left: -13rem;
+    width: 132rem;
+  }
+
+  .footer__question {
+    top: 625rem;
+    left: 356rem;
+    width: 52rem;
+  }
+
+  .footer__flower {
+    top: 561rem;
+    left: 187rem;
+    width: 48rem;
+  }
+
+  .footer__doodle {
+    top: 681rem;
+    left: 347rem;
+    width: 91rem;
+  }
+
+  .footer__sparkle {
+    top: 573rem;
+    left: 342rem;
+    width: 56rem;
+  }
+
+  .footer__spark {
+    top: 623rem;
+    left: 129rem;
+    width: 25rem;
+  }
+
+  .footer__squiggle {
+    top: 505rem;
+    left: 361rem;
+    width: 32rem;
+  }
+
+  .footer__strokes {
+    top: 563rem;
+    left: 106rem;
+    width: 26rem;
+  }
+
+  /* о нас */
+
+  .about main {
+    padding: 0;
+  }
+
+  .about .header__link--active::before {
+    top: -46rem;
+    left: -23rem;
+    width: 184rem;
+    height: 99rem;
+  }
+
+  .hero--about {
+    height: 654rem;
+    margin: 36rem 15rem 0;
+    padding: 36rem 15rem 0;
+    border-radius: 30rem;
+  }
+
+  .hero--about .hero__title {
+    font-size: 72rem;
+    line-height: 1;
+  }
+
+  .hero--about .hero__subtitle {
+    width: 331rem;
+    margin: 23rem auto 0;
+    font-size: 20rem;
+  }
+
+  .hero--about .hero__stickers {
+    top: 356rem;
+    left: -62rem;
+    transform: scale(0.618);
+  }
+
+  /* что такое stuck */
+  .intro {
+    height: 719rem;
+  }
+
+  .intro__title {
+    top: 246rem;
+    left: 195rem;
+    font-size: 66rem;
+  }
+
+  .intro__text {
+    top: 314rem;
+    left: 33rem;
+    width: 325rem;
+    font-size: 19rem;
+  }
+
+  .intro__start {
+    display: none;
+  }
+
+  .intro__flag {
+    top: 139rem;
+    left: -17rem;
+    width: 95rem;
+  }
+
+  .intro__sparkle {
+    top: 131rem;
+    left: 58rem;
+    width: 48rem;
+  }
+
+  .intro__flower {
+    top: 164rem;
+    left: 20rem;
+    width: 58rem;
+  }
+
+  .intro__cone {
+    top: 196rem;
+    left: -37rem;
+    width: 99rem;
+  }
+
+  .intro__hash {
+    top: 284rem;
+    left: 0;
+    width: 42rem;
+  }
+
+  .intro__star {
+    top: 567rem;
+    left: 202rem;
+    width: 53rem;
+  }
+
+  .intro__question {
+    top: 549rem;
+    left: 250rem;
+    width: 60rem;
+  }
+
+  .intro__globe {
+    top: 594rem;
+    left: 272rem;
+    width: 62rem;
+  }
+
+  .intro__doodle {
+    top: 524rem;
+    left: 288rem;
+    width: 87rem;
+  }
+
+  .intro__at {
+    top: 544rem;
+    left: 333rem;
+    width: 90rem;
+  }
+
+  /* у нас можно */
+  .can {
+    height: 1060rem;
+  }
+
+  .can__title-line {
+    font-size: 66rem;
+  }
+
+  .can__title-line--1 {
+    top: 62rem;
+    left: 140rem;
+  }
+
+  .can__title-line--2 {
+    top: 132rem;
+    left: 221rem;
+  }
+
+  .can__notebook {
+    top: 188rem;
+    left: -50rem;
+    width: 490rem;
+    height: 805rem;
+  }
+
+  .can__notebook::before {
+    background-size: cover;
+  }
+
+  .can__tape {
+    top: 172rem;
+    left: 288rem;
+    width: 176rem;
+  }
+
+  .can__label--learn {
+    top: 233rem;
+    left: 45rem;
+    width: 225rem;
+  }
+
+  .can__label--make {
+    top: 513rem;
+    left: 128rem;
+    width: 190rem;
+  }
+
+  .can__label--explore {
+    top: 800rem;
+    left: 20rem;
+    width: 345rem;
+  }
+
+  .can__text {
+    font-size: 18rem;
+  }
+
+  .can__text--learn {
+    top: 340rem;
+    left: 180rem;
+    width: 285rem;
+  }
+
+  .can__text--make {
+    top: 625rem;
+    left: 201rem;
+    width: 320rem;
+  }
+
+  .can__text--explore {
+    top: 917rem;
+    left: 197rem;
+    width: 295rem;
+  }
+
+  .can__cursor {
+    top: 276rem;
+    left: 310rem;
+    width: 43rem;
+  }
+
+  .can__ring {
+    top: 300rem;
+    left: 355rem;
+    width: 23rem;
+  }
+
+  .can__eyes {
+    top: 404rem;
+    left: 16rem;
+    width: 59rem;
+  }
+
+  .can__asterisk {
+    top: 409rem;
+    left: 52rem;
+    width: 80rem;
+  }
+
+  .can__ball {
+    top: 418rem;
+    left: 226rem;
+    width: 79rem;
+  }
+
+  .can__sparkle {
+    top: 361rem;
+    left: 256rem;
+    width: 103rem;
+  }
+
+  .can__hash {
+    top: 440rem;
+    left: 295rem;
+    width: 73rem;
+  }
+
+  .can__star {
+    top: 661rem;
+    left: 30rem;
+    width: 70rem;
+  }
+
+  .can__flower {
+    top: 706rem;
+    left: 41rem;
+    width: 67rem;
+  }
+
+  .can__tape-small {
+    top: 728rem;
+    left: 92rem;
+    width: 78rem;
+  }
+
+  .can__scissors {
+    top: 684rem;
+    left: 96rem;
+    width: 104rem;
+  }
+
+  .team {
+    height: 411rem;
+  }
+
+  /*  заголовок в 3 строки по центру */
+  .team__title {
+    position: absolute;
+    top: 87rem;
+    left: 50rem;
+    width: 291rem;
+    text-align: center;
+  }
+
+  .team__title-line {
+    position: static;
+    display: block;
+    font-size: 66rem;
+    line-height: 1.13;
+    white-space: normal;
+  }
+
+  .team__title-line--1,
+  .team__title-line--2 {
+    transform: rotate(-1deg);
+  }
+
+  .team__note {
+    top: 345rem;
+    left: 138rem;
+    width: 255rem;
+    font-size: 24rem;
+    line-height: 0.8;
+  }
+
+  .team__kolya {
+    top: 27rem;
+    left: -19rem;
+    width: 134rem;
+  }
+
+  .team__masha {
+    top: 3rem;
+    left: 296rem;
+    width: 129rem;
+  }
+
+  .team__anya {
+    top: 253rem;
+    left: 272rem;
+    width: 139rem;
+  }
+
+  .team__squiggle {
+    top: 76rem;
+    left: 252rem;
+    width: 37rem;
+  }
+
+  .team__strokes {
+    top: 209rem;
+    left: 8rem;
+    width: 20rem;
+  }
+
+  .team__sparkle {
+    top: 228rem;
+    left: 9rem;
+    width: 49rem;
+  }
+
+  .team__star-yellow {
+    top: 227rem;
+    left: 40rem;
+    width: 39rem;
+  }
+
+  .team__star-pink {
+    top: 277rem;
+    left: 8rem;
+    width: 37rem;
+  }
+
+  .team__star-orange {
+    top: 204rem;
+    left: 333rem;
+    width: 36rem;
+  }
+
+  .team__star-green {
+    top: 210rem;
+    left: 370rem;
+    width: 31rem;
+  }
+
+  .team__star-yellow-2 {
+    top: 207rem;
+    left: 332rem;
+    width: 54rem;
+  }
+
+  .team__spark {
+    top: 243rem;
+    left: 366rem;
+    width: 17rem;
+  }
+}
