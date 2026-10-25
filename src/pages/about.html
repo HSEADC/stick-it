@@ -3,16 +3,436 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>о нас | stuck!</title>
   </head>
-  <body>
-    <h1>О нас</h1>
-    <ul>
-      <li><a href="../index.html">главная</a></li>
-      <li><a href="articles.html">статьи</a></li>
-      <li><a href="dictionary.html">словарь</a></li>
-      <li><a href="guides.html">гайды</a></li>
-      <li><a href="about.html">о нас</a></li>
-    </ul>
+  <body class="about">
+    <!-- хедер -->
+    <header class="header">
+      <a class="header__logo" href="../index.html">
+        <img src="../images/stk_logo.svg" alt="stuck!" />
+      </a>
+
+      <button
+        class="header__burger"
+        id="burger"
+        type="button"
+        aria-label="меню"
+      ></button>
+
+      <nav class="header__nav">
+        <a class="header__link header__link--active" href="about.html">О нас</a>
+        <a class="header__link" href="dictionary.html">Словарь</a>
+        <!-- <a class="header__link" href="articles.html">Статьи</a> -->
+        <!-- <a class="header__link" href="guides.html">Гайды</a> -->
+      </nav>
+    </header>
+
+    <main>
+      <!-- первый экран -->
+      <section class="hero hero--about">
+        <div class="hero__text">
+          <h1 class="hero__title">Что такое<br />stuck?</h1>
+          <p class="hero__subtitle">
+            Рассказываем, кто мы, почему любим стикеры и зачем придумали STUCK
+          </p>
+        </div>
+
+        <div class="hero__stickers">
+          <img
+            class="hero__sticker hero__dot"
+            src="../images/about-hero-dot.svg"
+            alt=""
+          />
+          <img
+            class="hero__sticker hero__star"
+            src="../images/about-hero-star.svg"
+            alt=""
+          />
+          <img
+            class="hero__squiggle"
+            src="../images/dict-squiggle.svg"
+            alt=""
+          />
+          <img class="hero__sparks" src="../images/dict-spark.svg" alt="" />
+          <img
+            class="hero__sticker hero__strokes"
+            src="../images/footer-strokes.svg"
+            alt=""
+          />
+          <img
+            class="hero__sticker hero__arrow"
+            src="../images/about-hero-arrow.svg"
+            alt=""
+          />
+          <img
+            class="hero__sticker hero__flower"
+            src="../images/about-hero-flower.svg"
+            alt=""
+          />
+          <img
+            class="hero__sticker hero__excl"
+            src="../images/about-hero-excl.svg"
+            alt=""
+          />
+          <img
+            class="hero__sticker hero__mascot"
+            src="../images/about-hero-mascot.svg"
+            alt=""
+          />
+          <img
+            class="hero__sticker hero__eyes"
+            src="../images/about-hero-eyes.svg"
+            alt=""
+          />
+        </div>
+      </section>
+
+      <!-- что такое stuck -->
+      <section class="intro">
+        <img
+          class="sticker intro__start"
+          src="../images/about-start.svg"
+          alt=""
+        />
+        <img class="sticker intro__at" src="../images/about-at.svg" alt="" />
+        <img
+          class="sticker intro__globe"
+          src="../images/about-globe.svg"
+          alt=""
+        />
+        <img
+          class="sticker intro__flag"
+          src="../images/about-flag.svg"
+          alt=""
+        />
+
+        <h2 class="intro__title">stuck!</h2>
+        <p class="intro__text">
+          это медиа-справочник о стикер-культуре, которое собирает истории
+          интересных стикеров, помогает разобраться в терминах, понятиях, роли
+          наклеек в нашей жизни и покажет как сделать собственные наклейки
+        </p>
+
+        <img
+          class="sticker intro__question"
+          src="../images/about-question.svg"
+          alt=""
+        />
+        <img
+          class="sticker intro__star"
+          src="../images/about-star.svg"
+          alt=""
+        />
+        <img
+          class="sticker intro__sparkle"
+          src="../images/about-sparkle.svg"
+          alt=""
+        />
+        <img
+          class="sticker intro__flower"
+          src="../images/about-flower.svg"
+          alt=""
+        />
+        <img
+          class="sticker intro__doodle"
+          src="../images/about-doodle.svg"
+          alt=""
+        />
+        <img
+          class="sticker intro__cone"
+          src="../images/about-cone.svg"
+          alt=""
+        />
+        <img
+          class="sticker intro__hash"
+          src="../images/about-hash.svg"
+          alt=""
+        />
+      </section>
+
+      <!-- у нас можно -->
+      <section class="can">
+        <h2 class="can__title">
+          <span class="can__title-line can__title-line--1">у нас</span>
+          <span class="can__title-line can__title-line--2">можно</span>
+        </h2>
+
+        <div class="can__notebook"></div>
+        <img class="can__tape" src="../images/about-tape.svg" alt="" />
+
+        <h3 class="can__label can__label--learn">
+          <img src="../images/about-learn.svg" alt="Изучать" />
+        </h3>
+        <p class="can__text can__text--learn">
+          Работы художников<br />
+          и популярные проекты, ведь даже маленькая наклейка может рассказать
+          большую историю.
+        </p>
+        <img
+          class="sticker can__cursor"
+          src="../images/about-can-cursor.svg"
+          alt=""
+        />
+        <img
+          class="sticker can__ring"
+          src="../images/about-can-ring.svg"
+          alt=""
+        />
+        <img
+          class="sticker can__eyes"
+          src="../images/about-can-eyes.svg"
+          alt=""
+        />
+        <img
+          class="sticker can__asterisk"
+          src="../images/about-can-asterisk.svg"
+          alt=""
+        />
+
+        <h3 class="can__label can__label--make">
+          <img src="../images/about-make.svg" alt="Делать" />
+        </h3>
+        <p class="can__text can__text--make">
+          Свои стикеры, от первой идеи<br />
+          и выбора материалов до подготовки макета к печати, объясняем так,
+          чтобы захотелось попробовать самому.
+        </p>
+        <img
+          class="sticker can__ball"
+          src="../images/about-can-ball.svg"
+          alt=""
+        />
+        <img
+          class="sticker can__sparkle"
+          src="../images/about-can-sparkle.svg"
+          alt=""
+        />
+        <img
+          class="sticker can__hash"
+          src="../images/about-can-hash.svg"
+          alt=""
+        />
+
+        <h3 class="can__label can__label--explore">
+          <img src="../images/about-explore.svg" alt="Разбираться" />
+        </h3>
+        <p class="can__text can__text--explore">
+          От первой идеи и выбора материалов до подготовки макета к печати,
+          объясняем так, чтобы захотелось попробовать самому.
+        </p>
+        <img
+          class="sticker can__tape-small"
+          src="../images/about-can-tape-small.svg"
+          alt=""
+        />
+        <img
+          class="sticker can__scissors"
+          src="../images/about-can-scissors.svg"
+          alt=""
+        />
+        <img
+          class="sticker can__star"
+          src="../images/about-can-star.svg"
+          alt=""
+        />
+        <img
+          class="sticker can__flower"
+          src="../images/about-can-flower.svg"
+          alt=""
+        />
+      </section>
+
+      <!-- мы -->
+      <section class="team">
+        <img class="team__strokes" src="../images/footer-strokes.svg" alt="" />
+        <img
+          class="sticker team__sparkle"
+          src="../images/about-team-sparkle.svg"
+          alt=""
+        />
+        <img
+          class="sticker team__star-yellow"
+          src="../images/about-team-star-yellow.svg"
+          alt=""
+        />
+        <img
+          class="sticker team__star-pink"
+          src="../images/about-team-star-pink.svg"
+          alt=""
+        />
+
+        <h2 class="team__title">
+          <span class="team__title-line team__title-line--1">кто делает</span>
+          <span class="team__title-line team__title-line--2">stuck</span>
+        </h2>
+
+        <img
+          class="sticker team__kolya"
+          src="../images/about-team-green.svg"
+          alt=""
+        />
+        <img
+          class="sticker team__masha"
+          src="../images/about-team-yellow.svg"
+          alt=""
+        />
+        <img
+          class="sticker team__anya"
+          src="../images/about-team-pink.svg"
+          alt=""
+        />
+
+        <img class="team__squiggle" src="../images/dict-squiggle.svg" alt="" />
+        <img
+          class="sticker team__star-orange"
+          src="../images/about-team-star-orange.svg"
+          alt=""
+        />
+        <img
+          class="sticker team__star-yellow-2"
+          src="../images/about-team-star-yellow-2.svg"
+          alt=""
+        />
+        <img
+          class="sticker team__star-green"
+          src="../images/about-team-star-green.svg"
+          alt=""
+        />
+        <img class="team__spark" src="../images/dict-spark.svg" alt="" />
+
+        <p class="team__note">
+          Мы, которым нравятся стикеры и хочется рассказать о них больше
+        </p>
+      </section>
+    </main>
+
+    <!-- подвал -->
+    <footer class="footer footer--about">
+      <p class="footer__school">hse art and design school</p>
+
+      <nav class="footer__nav">
+        <a class="footer__link" href="about.html">О нас</a>
+        <a class="footer__link" href="dictionary.html">Словарь</a>
+      </nav>
+
+      <p class="footer__teachers">Загуменкова Софья<br />Комкова Анна</p>
+
+      <form
+        class="footer__form"
+        id="subscribe-form"
+        action="https://formspree.io/f/xoejnobb"
+        method="POST"
+      >
+        <h2 class="footer__form-title">Узнавай об обновлениях!</h2>
+        <input
+          class="footer__input"
+          type="email"
+          name="email"
+          placeholder="Введи свой e-mail"
+          aria-label="Твой e-mail"
+          required
+          data-fs-field
+        />
+        <button
+          class="footer__submit"
+          type="submit"
+          aria-label="Отправить"
+          data-fs-submit-btn
+        ></button>
+        <p class="footer__message" data-fs-success>
+          Готово! Напишем, когда появится что-то новое
+        </p>
+        <p class="footer__message" data-fs-error>
+          Не получилось отправить, попробуй ещё раз
+        </p>
+      </form>
+      <div class="footer__social">
+        <a
+          class="footer__social-link"
+          href="https://t.me/stuck_media"
+          target="_blank"
+          aria-label="Телеграм"
+        >
+          <img src="../images/about-icon-tg.svg" alt="" />
+        </a>
+        <a
+          class="footer__social-link"
+          href="https://vk.ru/club242082911"
+          target="_blank"
+          aria-label="ВКонтакте"
+        >
+          <img src="../images/about-icon-vk.svg" alt="" />
+        </a>
+      </div>
+
+      <!-- стикеры -->
+      <img
+        class="footer__sticker footer__hash"
+        src="../images/about-footer-hash.svg"
+        alt=""
+      />
+      <img
+        class="footer__sticker footer__mascot"
+        src="../images/about-hero-mascot.svg"
+        alt=""
+      />
+      <img
+        class="footer__sticker footer__at"
+        src="../images/about-footer-at.svg"
+        alt=""
+      />
+      <img
+        class="footer__sticker footer__name footer__name--anya"
+        src="../images/footer-anya.svg"
+        alt="Космачёва Анна"
+      />
+      <img
+        class="footer__sticker footer__name footer__name--masha"
+        src="../images/footer-masha.svg"
+        alt="Драчёва Мария"
+      />
+      <img
+        class="footer__sticker footer__name footer__name--kolya"
+        src="../images/footer-kolya.svg"
+        alt="Никифоров Николай"
+      />
+      <img
+        class="footer__sticker footer__doodle"
+        src="../images/footer-doodle.svg"
+        alt=""
+      />
+      <img
+        class="footer__sticker footer__sparkle"
+        src="../images/footer-sparkle.svg"
+        alt=""
+      />
+      <img
+        class="footer__sticker footer__flower"
+        src="../images/about-footer-flower.svg"
+        alt=""
+      />
+      <img
+        class="footer__sticker footer__question"
+        src="../images/about-footer-question.svg"
+        alt=""
+      />
+      <img class="footer__strokes" src="../images/footer-strokes.svg" alt="" />
+      <img class="footer__spark" src="../images/dict-spark.svg" alt="" />
+      <img class="footer__squiggle" src="../images/dict-squiggle.svg" alt="" />
+    </footer>
+
+    <script>
+      window.formspree =
+        window.formspree ||
+        function () {
+          (formspree.q = formspree.q || []).push(arguments);
+        };
+      formspree('initForm', {
+        formElement: '#subscribe-form',
+        formId: 'xoejnobb',
+        useDefaultStyles: false
+      });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   </body>
 </html>

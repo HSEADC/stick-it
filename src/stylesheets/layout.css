@@ -6,145 +6,1435 @@
 :root {
   --c-yellow: #ffde3b;
   --c-green: #bdea29;
-  --c-pink: #ffc2d1;
+  --c-pink: #ff8db7;
   --c-orange: #ee4c23;
   --c-blue: #77e1ff;
   --c-white: #fff6ed;
   --c-grey: #2c2825;
+  --c-forest: #68850b;
 
   --gap: clamp(16px, 4vw, 56px);
   --radius: clamp(16px, 2vw, 28px);
+  --font-title: 'UNCAGE', Arial, sans-serif;
+  --font-hand: 'Ura Bum Bum SP', cursive;
 }
 
 html {
-  font-size: calc(1vw / 12.8);
+  font-size: calc(1vw / 14.4);
 }
+
 body {
-  font-family: 'PT Root UI', Arial, Helvetica, sans-serif;
+  font-family: 'Mont', Arial, sans-serif;
   font-size: 18rem;
   background-color: var(--c-grey);
   color: var(--c-white);
 }
 
-/* заглушка */
-/* .index {
-  font-family: 'Manrope', Arial, Helvetica, sans-serif;
-  line-height: 1.5;
-  background-color: var(--c-cream);
-  color: var(--c-green);
+/* общие стили */
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-h1,
-h2 {
-  font-weight: 700;
-}
-h3 {
-  font-weight: 500;
-}
-
-svg {
+img {
   display: block;
-} */
+  max-width: 100%;
+}
 
-/* стили для ститьи */
+button {
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-/* .article__header,
-.article__content {
-  max-width: 1000rem;
-  margin: 0 auto;
-  padding: 64rem 48rem;
-}
-.backlink {
-  color: #5c5c66;
-  padding: 3rem 6rem;
-  font-weight: 500;
-  transition: color ease 0.6s;
-}
-.backlink::before {
-  content: '← ';
-}
-.backlink:hover {
-  color: #0909b3;
-}
-.article__tags {
+/* хедер */
+.header {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10rem;
-  margin: 12rem 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 56rem 56rem 0 56rem;
 }
-.article__tag {
-  font-size: 13rem;
-  border-radius: 30rem;
-  border: 1rem solid #f4f4f4;
-  padding: 6rem 14rem;
-  color: #5c5c66;
-  background-color: #f4f4f4;
-}
-.article__title {
-  font-size: 64rem;
-  margin: 32rem 0 16rem;
-}
-.article__lead {
-  font-size: 26rem;
-  line-height: 1.5;
-  max-width: 700rem;
-  color: #5c5c66;
-}
-.article__content--image {
-  width: 100%;
-  border-radius: 18rem;
-  max-width: 720rem;
-  display: block;
-  margin: 0 auto;
-}
-img + .article__content--header {
-  margin-top: 128rem;
-}
-.article__content--header {
-  font-size: 32rem;
-  margin: 48rem 0 16rem;
-}
-.article__content--text,
-.article__content--list {
-  line-height: 1.6;
-}
-.article__content--list {
-  list-style-type: square;
-  margin-left: 20rem;
-} */
 
-/* стили для заглушки */
+.header__logo img {
+  width: 88rem;
+}
 
-/* .header {
-  position: fixed;
+.header__nav {
+  display: flex;
+  gap: 80rem;
+}
+
+.header__link {
+  position: relative;
+  font-size: 25rem;
+  transition: color 0.3s;
+}
+
+.header__link:hover {
+  color: var(--c-yellow);
+}
+
+/* жёлтая обводка вокруг текущего раздела */
+.header__link--active::before {
+  content: '';
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 162rem;
+  height: 73rem;
+  background: url('../images/dict-outline.svg') center / contain no-repeat;
+  transform: translate(-50%, -38%);
+}
+
+@keyframes draw-circle {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* отступы страницы по бокам */
+main {
+  padding: 0 56rem;
+}
+
+/* первый экран */
+.hero {
+  position: relative;
+  height: 463rem;
+  margin-top: 70rem;
+  padding: 100rem 0 0 45rem;
+  background-color: var(--c-pink);
+  border-radius: 45rem;
+}
+
+.hero__title {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 105rem;
+  text-transform: uppercase;
+}
+
+.hero__subtitle {
+  width: 430rem;
+  margin-top: 10rem;
+  font-size: 25rem;
+  line-height: 1.2;
+}
+
+/* правая часть баннера: клетчатый фон и стикеры */
+.hero__stickers {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 680rem;
+  height: 100%;
+  background: url('../images/hero-background.png') 18rem 0 / 629rem 463rem no-repeat;
+}
+
+.hero__sticker,
+.hero__squiggle,
+.hero__sparks {
+  position: absolute;
+}
+
+/* стикеры плавно покачиваются, у каждого своя задержка, чтобы не двигались одновременно */
+.hero__sticker {
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero__mascot {
+  top: -10rem;
+  left: 106rem;
+  width: 452rem;
+  animation-duration: 6s;
+}
+
+.hero__bombing {
+  top: -20rem;
+  left: 60rem;
+  width: 245rem;
+  animation-delay: -1s;
+}
+
+.hero__kiss-cut {
+  top: -12rem;
+  left: 430rem;
+  width: 215rem;
+  animation-delay: -2s;
+}
+
+.hero__paste-up {
+  top: 230rem;
+  left: -10rem;
+  width: 242rem;
+  animation-delay: -3s;
+}
+
+.hero__question--1 {
+  top: 140rem;
+  left: 0;
+  width: 103rem;
+  animation-delay: -1.5s;
+}
+
+.hero__question--2 {
+  top: 240rem;
+  left: 540rem;
+  width: 98rem;
+  animation-delay: -2.5s;
+}
+
+.hero__card--blue {
+  top: 330rem;
+  left: 470rem;
+  width: 120rem;
+  animation-delay: -0.5s;
+}
+
+.hero__card--green {
+  top: 340rem;
+  left: 90rem;
+  width: 127rem;
+  animation-delay: -3.5s;
+}
+
+/* закорючка рисуется и стирается */
+.hero__squiggle {
+  top: 175rem;
+  left: 600rem;
+  width: 63rem;
+  animation: draw-circle 1.2s ease-in-out 1s infinite alternate;
+}
+
+/* искорка мигает */
+.hero__sparks {
+  top: 100rem;
+  left: 20rem;
+  width: 36rem;
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+/* стикеры плавно покачиваются, у каждого своя задержка, чтобы не двигались одновременно */
+.hero__sticker {
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero__mascot {
+  animation-duration: 6s;
+}
+
+.hero__bombing {
+  animation-delay: -1s;
+}
+
+.hero__kiss-cut {
+  animation-delay: -2s;
+}
+
+.hero__paste-up {
+  animation-delay: -3s;
+}
+
+.hero__question--1 {
+  animation-delay: -1.5s;
+}
+
+.hero__question--2 {
+  animation-delay: -2.5s;
+}
+
+.hero__card--blue {
+  animation-delay: -0.5s;
+}
+
+.hero__card--green {
+  animation-delay: -3.5s;
+}
+
+/* закорючка рисуется и стирается */
+.hero__squiggle {
+  animation: draw-circle 1.2s ease-in-out 1s infinite alternate;
+}
+
+/* искорка мигает */
+.hero__sparks {
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10rem) rotate(2deg);
+  }
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.6);
+    opacity: 0.4;
+  }
+}
+
+/* фильтры */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 36rem;
+  margin-top: 90rem;
+}
+
+/* обводка у фильтров — рисованная картинка-маска,
+   её закрашивает цвет текста кнопки, поэтому цветные версии картинок не нужны */
+.filters__button {
+  position: relative;
+  height: 51rem;
+  font-size: 25rem;
+  transition: color 0.3s;
+}
+
+.filters__button::before {
+  content: '';
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 10;
-  padding: 0 var(--gap);
-  /* вертикаль, горизонталь */
-/* display: flex;
   width: 100%;
-  height: 82rem;
-  align-items: center;
-  gap: var(--gap);
+  height: 100%;
+  background-color: currentColor;
+  mask-position: center;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
 }
 
-.header__logo {
+.filters__button[data-filter='all'] {
+  --filter-color: var(--c-pink);
+  width: 200rem;
+}
+
+.filters__button[data-filter='general'] {
+  --filter-color: var(--c-yellow);
+  width: 240rem;
+}
+
+.filters__button[data-filter='materials'] {
+  --filter-color: var(--c-green);
+  width: 187rem;
+}
+
+.filters__button[data-filter='properties'] {
+  --filter-color: var(--c-blue);
+  width: 169rem;
+}
+
+.filters__button[data-filter='placement'] {
+  --filter-color: var(--c-orange);
+  width: 218rem;
+}
+
+.filters__button[data-filter='all']::before {
+  mask-image: url('../images/filters-outline-all.svg');
+}
+
+.filters__button[data-filter='general']::before {
+  mask-image: url('../images/filters-outline-general.svg');
+}
+
+.filters__button[data-filter='materials']::before {
+  mask-image: url('../images/filters-outline-materials.svg');
+}
+
+.filters__button[data-filter='properties']::before {
+  mask-image: url('../images/filters-outline-properties.svg');
+}
+
+.filters__button[data-filter='placement']::before {
+  mask-image: url('../images/filters-outline-placement.svg');
+}
+
+/* выбранный фильтр и фильтр под курсором горят цветом категории вместе с обводкой */
+.filters__button:hover,
+.filters__button--active {
+  color: var(--filter-color);
+}
+
+/* карточки */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16rem;
+  margin-top: 56rem;
+}
+
+.card__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 300rem;
+  padding: 65rem 10rem;
+  border: 3.3rem solid var(--c-white);
+  border-radius: 28rem;
+  transition:
+    color 0.4s,
+    background-color 0.4s,
+    border-color 0.4s;
+}
+
+.card__tag {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 10rem;
-  font-weight: 800;
-  font-size: 20rem;
+  height: 40rem;
+  padding: 0 24rem;
+  font-size: 18rem;
 }
 
-.logo__icon {
-  width: 30rem;
-  height: 30rem;
-  fill: var(--c-pink);
-  /* заливка для свг */
-/* transition: transform 0.8s ease-out;
+.card__tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  mask-position: center;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
 }
 
-.header__logo:hover .logo__icon {
-  transform: rotate(180deg) scale(1.1);
-} */
+/* currentColor — фоновый цвет элемента как текст */
+
+.card__title {
+  max-width: 400rem;
+  margin: auto 0;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 43rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* цвет каждой категории */
+.card[data-filter='general'] {
+  --card-color: var(--c-yellow);
+}
+
+.card[data-filter='materials'] {
+  --card-color: var(--c-green);
+}
+
+.card[data-filter='properties'] {
+  --card-color: var(--c-blue);
+}
+
+.card[data-filter='placement'] {
+  --card-color: var(--c-orange);
+}
+
+/* тег на карточке сразу горит цветом своей категории */
+.card__tag {
+  color: var(--card-color);
+}
+
+/* при наведении карточка заливается цветом, поэтому тег становится тёмным */
+.card__button:hover .card__tag {
+  color: var(--c-grey);
+}
+
+/* при наведении карточка плавно становится цветной */
+.card__button:hover {
+  color: var(--c-grey);
+  background-color: var(--card-color);
+  border-color: var(--card-color);
+}
+
+/* карточка плавно появляется, когда фильтр её показывает */
+.card {
+  animation: card-show 0.4s ease-out;
+}
+
+@keyframes card-show {
+  from {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+}
+
+/* окошко термина */
+.term {
+  width: 1053rem;
+  height: 658rem;
+  margin: auto;
+  padding: 125rem 100rem 60rem;
+  flex-direction: column;
+  align-items: center;
+  color: var(--card-color);
+  text-align: center;
+  background-color: var(--c-grey);
+  border: 6.7rem solid var(--card-color);
+  border-radius: 28rem;
+}
+
+.term:popover-open {
+  display: flex;
+  animation: term-show 0.3s ease-out;
+}
+
+/* затемнение страницы под окошком */
+.term::backdrop {
+  background-color: rgb(44 40 37 / 0.8);
+}
+
+/* тег в окошке — цветная рисованная обводка */
+/* тег в окошке — та же рисованная обводка, закрашенная цветом категории */
+.term__tag {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 47rem;
+  font-size: 25rem;
+}
+
+.term__tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  mask-position: center;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+.card[data-filter='general'] .term__tag {
+  width: 236rem;
+}
+
+.card[data-filter='materials'] .term__tag {
+  width: 183rem;
+}
+
+.card[data-filter='properties'] .term__tag {
+  width: 165rem;
+}
+
+.card[data-filter='placement'] .term__tag {
+  width: 214rem;
+}
+
+.card[data-filter='general'] .card__tag::before,
+.card[data-filter='general'] .term__tag::before {
+  mask-image: url('../images/filters-outline-general.svg');
+}
+
+.card[data-filter='materials'] .card__tag::before,
+.card[data-filter='materials'] .term__tag::before {
+  mask-image: url('../images/filters-outline-materials.svg');
+}
+
+.card[data-filter='properties'] .card__tag::before,
+.card[data-filter='properties'] .term__tag::before {
+  mask-image: url('../images/filters-outline-properties.svg');
+}
+
+.card[data-filter='placement'] .card__tag::before,
+.card[data-filter='placement'] .term__tag::before {
+  mask-image: url('../images/filters-outline-placement.svg');
+}
+
+.term__title {
+  margin-top: auto;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 92rem;
+  line-height: 0.85;
+  text-transform: uppercase;
+  transform: rotate(-0.95deg);
+}
+
+.term__text {
+  width: 600rem;
+  margin-top: 30rem;
+  margin-bottom: auto;
+  font-size: 25rem;
+  line-height: 1.1;
+}
+
+@keyframes term-show {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* крестик в левом верхнем углу окошка */
+.term__close {
+  position: absolute;
+  top: 50rem;
+  left: 57rem;
+  width: 38rem;
+  height: 38rem;
+}
+
+.term__close::before,
+.term__close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 6rem;
+  margin-top: -3rem;
+  background-color: currentColor;
+  border-radius: 3rem;
+}
+
+.term__close::before {
+  transform: rotate(45deg);
+}
+
+.term__close::after {
+  transform: rotate(-45deg);
+}
+
+/* подвал */
+.footer {
+  position: relative;
+  height: 648rem;
+  margin-top: 135rem;
+  background-color: var(--c-pink);
+  border-radius: 41rem 41rem 0 0;
+  overflow: hidden;
+}
+
+.footer__hse,
+.footer__teachers,
+.footer__nav {
+  position: absolute;
+  top: 55rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.footer__hse {
+  left: 58rem;
+  width: 165rem;
+  font-size: 14rem;
+}
+
+.footer__teachers {
+  left: 1238rem;
+  font-size: 14rem;
+}
+
+.footer__nav {
+  left: 622rem;
+  display: flex;
+  gap: 82rem;
+  font-size: 19rem;
+}
+
+.footer__link {
+  transition: color 0.3s;
+}
+
+.footer__link:hover {
+  color: var(--c-grey);
+}
+
+/* форма: заголовок на всю ширину, под ним поле и кнопка в одну строку */
+.footer__form {
+  position: absolute;
+  top: 158rem;
+  left: 383rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15rem 9rem;
+  width: 676rem;
+}
+
+.footer__form-title {
+  width: 100%;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 43rem;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.footer__input {
+  width: 570rem;
+  height: 57rem;
+  padding: 0 37rem;
+  font: inherit;
+  font-weight: 600;
+  font-size: 19rem;
+  color: inherit;
+  background: none;
+  border: 2.9rem solid var(--c-forest);
+  border-radius: 57rem;
+}
+
+.footer__input::placeholder {
+  color: rgb(255 246 237 / 0.75);
+}
+
+.footer__submit {
+  width: 92rem;
+  height: 57rem;
+  background: url('../images/icon-arrow.svg') center / contain no-repeat;
+  transition: transform 0.3s;
+}
+
+.footer__submit:hover {
+  transform: translateX(6rem);
+}
+
+.footer__social {
+  position: absolute;
+  top: 376rem;
+  left: 617rem;
+  display: flex;
+  gap: 31rem;
+}
+
+.footer__social img {
+  height: 70rem;
+  transition: transform 0.3s;
+}
+
+.footer__social-link:hover img {
+  transform: scale(1.1);
+}
+
+/* стикеры в подвале покачиваются, при наведении увеличиваются и отбрасывают тень */
+.footer__sticker,
+.footer__strokes,
+.footer__spark,
+.footer__squiggle {
+  position: absolute;
+}
+
+.footer__sticker {
+  animation: float 4s ease-in-out infinite;
+  transition:
+    scale 0.3s,
+    filter 0.3s;
+}
+
+.footer__sticker:hover {
+  scale: 1.08;
+  filter: drop-shadow(0 10rem 12rem rgb(0 0 0 / 0.35));
+}
+
+.footer__hash {
+  top: 555rem;
+  left: 4rem;
+  width: 72rem;
+  animation-delay: -1s;
+}
+
+.footer__mascot {
+  top: 323rem;
+  left: 10rem;
+  width: 296rem;
+  rotate: -8.31deg;
+  animation-duration: 6s;
+}
+
+.footer__at {
+  top: 546rem;
+  left: 613rem;
+  width: 172rem;
+  animation-delay: -2s;
+}
+
+.footer__name--anya {
+  top: 497rem;
+  left: 228rem;
+  width: 240rem;
+  animation-delay: -0.5s;
+}
+
+.footer__name--masha {
+  top: 561rem;
+  left: 391rem;
+  width: 172rem;
+  animation-delay: -2.5s;
+}
+
+.footer__name--kolya {
+  top: 501rem;
+  left: 519rem;
+  width: 281rem;
+  animation-delay: -1.5s;
+}
+
+.footer__doodle {
+  top: 589rem;
+  left: 748rem;
+  width: 123rem;
+  animation-delay: -3s;
+}
+
+.footer__sparkle {
+  top: 504rem;
+  left: 807rem;
+  width: 79rem;
+  animation-delay: -3.5s;
+}
+
+.footer__flower {
+  top: 591rem;
+  left: 310rem;
+  width: 75rem;
+  animation-delay: -1.2s;
+}
+
+.footer__question {
+  top: 576rem;
+  left: 882rem;
+  width: 73rem;
+  animation-delay: -2.2s;
+}
+
+.footer__strokes {
+  top: 578rem;
+  left: 173rem;
+  width: 51rem;
+}
+
+.footer__spark {
+  top: 593rem;
+  left: 583rem;
+  width: 35rem;
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+.footer__squiggle {
+  top: 480rem;
+  left: 479rem;
+  width: 45rem;
+  animation: draw-circle 1.2s ease-in-out 1s infinite alternate;
+}
+
+/* при наведении стикер чуть увеличивается и отбрасывает тень */
+.hero__sticker {
+  transition:
+    scale 0.3s,
+    filter 0.3s;
+}
+
+.hero__sticker:hover {
+  scale: 1.08;
+  filter: drop-shadow(0 10rem 12rem rgb(0 0 0 / 0.35));
+}
+
+/* если в системе выключена анимация, стикеры стоят на месте */
+@media (prefers-reduced-motion: reduce) {
+
+  .hero__sticker,
+  .hero__squiggle,
+  .hero__sparks,
+  .footer__sticker,
+  .footer__spark,
+  .footer__squiggle,
+  .card,
+  .term:popover-open {
+    animation: none;
+  }
+}
+
+/* форма. соо спрятано */
+.footer__message {
+  display: none;
+  width: 100%;
+  font-weight: 600;
+  font-size: 18rem;
+  text-align: center;
+}
+
+.footer__message[data-fs-active] {
+  display: block;
+}
+
+/* ==========================================================================
+   СТРАНИЦА «О НАС»
+   Секции идут друг за другом, всё внутри стоит по координатам из макета:
+   left — X в Фигме, top — Y в Фигме минус верх секции
+   ========================================================================== */
+
+.about main {
+  padding: 0;
+}
+
+/* обводка «О нас» в шапке */
+.about .header__link--active::before {
+  top: -36rem;
+  left: -18rem;
+  width: 144rem;
+  height: 77rem;
+  background-image: url('../images/about-outline.svg');
+  transform: none;
+}
+
+/* общий класс для стикеров на этой странице: покачиваются и реагируют на наведение */
+.sticker {
+  position: absolute;
+  animation: float 4s ease-in-out infinite;
+  transition:
+    scale 0.3s,
+    filter 0.3s;
+}
+
+.sticker:nth-child(2n) {
+  animation-delay: -1.5s;
+}
+
+.sticker:nth-child(3n) {
+  animation-delay: -3s;
+}
+
+.sticker:hover {
+  scale: 1.08;
+  filter: drop-shadow(0 10rem 12rem rgb(0 0 0 / 0.35));
+}
+
+/* первый экран: та же разметка, что в словаре, другой цвет и стикеры */
+.hero--about {
+  height: 462rem;
+  margin: 86rem 56rem 0;
+  padding-top: 90rem;
+  background-color: var(--c-green);
+  border-radius: 43rem;
+  color: var(--c-forest);
+}
+
+.hero--about .hero__title {
+  line-height: 0.885;
+}
+
+.hero--about .hero__subtitle {
+  width: 514rem;
+  margin-top: 39rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.hero--about .hero__stickers {
+  background: url('../images/about-hero-checker.png') 125rem 34rem / 511rem 415rem no-repeat;
+}
+
+.hero__strokes {
+  position: absolute;
+}
+
+.hero--about .hero__dot {
+  top: 149rem;
+  left: 108rem;
+  width: 51rem;
+}
+
+.hero--about .hero__star {
+  top: 19rem;
+  left: 122rem;
+  width: 130rem;
+}
+
+.hero--about .hero__squiggle {
+  top: 250rem;
+  left: 99rem;
+  width: 62rem;
+}
+
+.hero--about .hero__sparks {
+  top: 101rem;
+  left: 586rem;
+  width: 36rem;
+}
+
+.hero--about .hero__strokes {
+  top: 410rem;
+  left: 535rem;
+  width: 60rem;
+  rotate: 240deg;
+}
+
+.hero--about .hero__arrow {
+  top: 311rem;
+  left: 127rem;
+  width: 152rem;
+}
+
+.hero--about .hero__flower {
+  top: 224rem;
+  left: 494rem;
+  width: 178rem;
+}
+
+.hero--about .hero__excl {
+  top: -21rem;
+  left: 512rem;
+  width: 70rem;
+}
+
+.hero--about .hero__mascot {
+  top: 2rem;
+  left: 154rem;
+  width: 429rem;
+}
+
+.hero--about .hero__eyes {
+  top: 160rem;
+  left: 561rem;
+  width: 88rem;
+}
+
+/* что такое stuck: секция от 647 до 1400 по макету */
+.intro {
+  position: relative;
+  height: 753rem;
+}
+
+.intro__title {
+  position: absolute;
+  top: 270rem;
+  left: 720rem;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 105rem;
+  line-height: 0.885;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translate(-50%, -50%) rotate(-3deg);
+}
+
+.intro__text {
+  position: absolute;
+  top: 360rem;
+  left: 387rem;
+  width: 664rem;
+  font-size: 25rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.intro__start {
+  top: 555rem;
+  left: 124rem;
+  width: 270rem;
+}
+
+.intro__at {
+  top: 364rem;
+  left: 1234rem;
+  width: 169rem;
+}
+
+.intro__globe {
+  top: 549rem;
+  left: 1204rem;
+  width: 119rem;
+}
+
+.intro__flag {
+  top: 248rem;
+  left: 113rem;
+  width: 196rem;
+}
+
+.intro__question {
+  top: 487rem;
+  left: 1137rem;
+  width: 123rem;
+}
+
+.intro__star {
+  top: 534rem;
+  left: 1054rem;
+  width: 111rem;
+}
+
+.intro__sparkle {
+  top: 198rem;
+  left: 266rem;
+  width: 99rem;
+}
+
+.intro__flower {
+  top: 285rem;
+  left: 189rem;
+  width: 122rem;
+}
+
+.intro__doodle {
+  top: 352rem;
+  left: 1138rem;
+  width: 175rem;
+}
+
+.intro__cone {
+  top: 267rem;
+  left: 13rem;
+  width: 244rem;
+}
+
+.intro__hash {
+  top: 416rem;
+  left: 192rem;
+  width: 94rem;
+}
+
+/* у нас можно: секция от 1400 до 3060 по макету */
+.can {
+  position: relative;
+  height: 1660rem;
+  overflow: hidden;
+}
+
+/* повёрнутые надписи ставим по центру: left и top — центр надписи в макете */
+.can__title-line,
+.can__text,
+.team__title-line,
+.team__note {
+  position: absolute;
+  text-align: center;
+}
+
+.can__title-line,
+.team__title-line {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 105rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.can__title-line--1 {
+  top: 150rem;
+  left: 313rem;
+  transform: translate(-50%, -50%) rotate(-6.2deg);
+}
+
+.can__title-line--2 {
+  top: 235rem;
+  left: 583rem;
+  transform: translate(-50%, -50%) rotate(0.3deg);
+}
+
+.can__notebook {
+  position: absolute;
+  top: 310rem;
+  left: 116rem;
+  width: 1488rem;
+  height: 1068rem;
+  background-color: var(--c-white);
+  border-radius: 40rem;
+  transform: rotate(-3deg);
+}
+
+/* точки на листе: картинка из Фигмы уже наклонена на 3 градуса,
+   а лист тоже повёрнут, поэтому поворачиваем точки обратно */
+.can__notebook::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/about-points-note.svg') center / 1303rem 1034rem no-repeat;
+  transform: rotate(3deg);
+}
+
+.can__tape,
+.can__label {
+  position: absolute;
+}
+
+.can__tape {
+  top: 259rem;
+  left: 990rem;
+  width: 290rem;
+}
+
+.can__label--learn {
+  top: 456rem;
+  left: 246rem;
+  width: 398rem;
+}
+
+.can__label--make {
+  top: 665rem;
+  left: 866rem;
+  width: 345rem;
+}
+
+.can__label--explore {
+  top: 983rem;
+  left: 245rem;
+  width: 614rem;
+}
+
+.can__text {
+  font-family: var(--font-hand);
+  font-size: 31rem;
+  color: var(--c-grey);
+}
+
+.can__text--learn {
+  top: 657rem;
+  left: 477rem;
+  width: 496rem;
+  transform: translate(-50%, -50%) rotate(-4.6deg);
+}
+
+.can__text--make {
+  top: 865rem;
+  left: 1016rem;
+  width: 538rem;
+  transform: translate(-50%, -50%) rotate(-4.8deg);
+}
+
+.can__text--explore {
+  top: 1182rem;
+  left: 566rem;
+  width: 511rem;
+  transform: translate(-50%, -50%) rotate(-3deg);
+}
+
+/* команда: секция от 3060 до подвала */
+.team {
+  position: relative;
+  height: 580rem;
+}
+
+.team__title-line--1 {
+  top: 165rem;
+  left: 673rem;
+  transform: translate(-50%, -50%) rotate(-1deg);
+}
+
+.team__title-line--2 {
+  top: 257rem;
+  left: 940rem;
+  transform: translate(-50%, -50%) rotate(-1deg);
+}
+
+.team__note {
+  top: 287rem;
+  left: 532rem;
+  width: 410rem;
+  font-family: var(--font-hand);
+  font-size: 34rem;
+  line-height: 0.75;
+  color: var(--c-yellow);
+  transform: translate(-50%, -50%) rotate(2deg);
+}
+
+.team__kolya {
+  top: 100rem;
+  left: 88rem;
+  width: 208rem;
+}
+
+.team__masha {
+  top: -3rem;
+  left: 1160rem;
+  width: 208rem;
+}
+
+.team__anya {
+  top: 230rem;
+  left: 858rem;
+  width: 208rem;
+}
+
+/* подвал: такой же, как в словаре, меняется только цвет фона */
+.footer--about {
+  background-color: var(--c-green);
+  color: var(--c-forest);
+}
+
+/* если в системе выключена анимация, стикеры этой страницы стоят на месте */
+@media (prefers-reduced-motion: reduce) {
+  .sticker {
+    animation: none;
+  }
+}
+
+/* новые стикеры в блокноте */
+.can__cursor {
+  top: 563rem;
+  left: 752rem;
+  width: 76rem;
+}
+
+.can__ring {
+  top: 609rem;
+  left: 832rem;
+  width: 44rem;
+}
+
+.can__eyes {
+  top: 743rem;
+  left: 150rem;
+  width: 107rem;
+}
+
+.can__asterisk {
+  top: 764rem;
+  left: 214rem;
+  width: 133rem;
+}
+
+.can__ball {
+  top: 840rem;
+  left: 528rem;
+  width: 136rem;
+}
+
+.can__sparkle {
+  top: 743rem;
+  left: 584rem;
+  width: 166rem;
+}
+
+.can__hash {
+  top: 880rem;
+  left: 658rem;
+  width: 104rem;
+}
+
+.can__tape-small {
+  top: 1045rem;
+  left: 1188rem;
+  width: 149rem;
+}
+
+.can__scissors {
+  top: 908rem;
+  left: 1168rem;
+  width: 196rem;
+}
+
+.can__star {
+  top: 976rem;
+  left: 1030rem;
+  width: 132rem;
+}
+
+.can__flower {
+  top: 1048rem;
+  left: 1089rem;
+  width: 132rem;
+}
+
+/* новые стикеры у команды */
+.team__sparkle {
+  top: -65rem;
+  left: 263rem;
+  width: 92rem;
+}
+
+.team__star-yellow {
+  top: -40rem;
+  left: 329rem;
+  width: 78rem;
+}
+
+.team__star-pink {
+  top: 14rem;
+  left: 202rem;
+  width: 67rem;
+}
+
+.team__star-orange {
+  top: 286rem;
+  left: 1176rem;
+  width: 65rem;
+}
+
+.team__star-yellow-2 {
+  top: 322rem;
+  left: 1149rem;
+  width: 80rem;
+}
+
+.team__star-green {
+  top: 305rem;
+  left: 1248rem;
+  width: 59rem;
+}
+
+/* штрихи стоят, закорючка рисуется, искорка мигает — как в баннере */
+.team__strokes,
+.team__squiggle,
+.team__spark {
+  position: absolute;
+}
+
+.team__strokes {
+  top: -50rem;
+  left: 190rem;
+  width: 45rem;
+  rotate: 55deg;
+}
+
+.team__squiggle {
+  top: 85rem;
+  left: 1065rem;
+  width: 75rem;
+  animation: draw-circle 1.2s ease-in-out 1s infinite alternate;
+}
+
+.team__spark {
+  top: 383rem;
+  left: 1245rem;
+  width: 40rem;
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+.footer--about .footer__form {
+  color: var(--c-forest);
+}
+
+.footer--about .footer__input::placeholder {
+  color: var(--c-forest);
+  opacity: 0.75;
+}
+
+/* кнопка со стрелкой в подвале в цветах этой страницы */
+.footer--about .footer__submit {
+  background-image: url('../images/about-icon-arrow.svg');
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .team__squiggle,
+  .team__spark {
+    animation: none;
+  }
+}
