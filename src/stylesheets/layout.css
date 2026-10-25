@@ -12,19 +12,15 @@
   --c-white: #fff6ed;
   --c-grey: #2c2825;
   --c-forest: #68850b;
-
-<<<<<<< Updated upstream
-  --gap: clamp(16px, 4vw, 56px);
-  --radius: clamp(16px, 2vw, 28 px);
-=======
+  --c-dark-pink: #eb3779;
   --font-title: 'UNCAGE', Arial, sans-serif;
   --font-hand: 'Ura Bum Bum SP', cursive;
->>>>>>> Stashed changes
 }
 
 html {
   font-size: calc(1vw / 14.4);
 }
+
 body {
   font-family: 'Mont', Arial, sans-serif;
   font-size: 18rem;
@@ -32,7 +28,6 @@ body {
   color: var(--c-white);
 }
 
-/* общие стили */
 a {
   color: inherit;
   text-decoration: none;
@@ -52,6 +47,10 @@ button {
   cursor: pointer;
 }
 
+main {
+  padding: 0 56rem;
+}
+
 /* хедер */
 .header {
   display: flex;
@@ -61,7 +60,7 @@ button {
 }
 
 .header__logo img {
-  width: 88rem;
+  width: 105rem;
 }
 
 .header__nav {
@@ -79,7 +78,6 @@ button {
   color: var(--c-yellow);
 }
 
-/* жёлтая обводка вокруг текущего раздела */
 .header__link--active::before {
   content: '';
   position: absolute;
@@ -91,26 +89,13 @@ button {
   transform: translate(-50%, -38%);
 }
 
-@keyframes draw-circle {
-  from {
-    clip-path: inset(0 100% 0 0);
-  }
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-/* отступы страницы по бокам */
-main {
-  padding: 0 56rem;
-}
-
 /* первый экран */
 .hero {
   position: relative;
   height: 463rem;
   margin-top: 70rem;
   padding: 100rem 0 0 45rem;
+  color: var(--c-dark-pink);
   background-color: var(--c-pink);
   border-radius: 45rem;
 }
@@ -129,7 +114,6 @@ main {
   line-height: 1.2;
 }
 
-/* правая часть баннера: клетчатый фон и стикеры */
 .hero__stickers {
   position: absolute;
   top: 0;
@@ -146,9 +130,11 @@ main {
   position: absolute;
 }
 
-/* стикеры плавно покачиваются, у каждого своя задержка, чтобы не двигались одновременно */
 .hero__sticker {
   animation: float 4s ease-in-out infinite;
+  transition:
+    scale 0.3s,
+    filter 0.3s;
 }
 
 .hero__mascot {
@@ -207,7 +193,6 @@ main {
   animation-delay: -3.5s;
 }
 
-/* закорючка рисуется и стирается */
 .hero__squiggle {
   top: 175rem;
   left: 600rem;
@@ -215,7 +200,6 @@ main {
   animation: draw-circle 1.2s ease-in-out 1s infinite alternate;
 }
 
-/* искорка мигает */
 .hero__sparks {
   top: 100rem;
   left: 20rem;
@@ -223,73 +207,9 @@ main {
   animation: twinkle 1.5s ease-in-out infinite;
 }
 
-/* стикеры плавно покачиваются, у каждого своя задержка, чтобы не двигались одновременно */
-.hero__sticker {
-  animation: float 4s ease-in-out infinite;
-}
-
-.hero__mascot {
-  animation-duration: 6s;
-}
-
-.hero__bombing {
-  animation-delay: -1s;
-}
-
-.hero__kiss-cut {
-  animation-delay: -2s;
-}
-
-.hero__paste-up {
-  animation-delay: -3s;
-}
-
-.hero__question--1 {
-  animation-delay: -1.5s;
-}
-
-.hero__question--2 {
-  animation-delay: -2.5s;
-}
-
-.hero__card--blue {
-  animation-delay: -0.5s;
-}
-
-.hero__card--green {
-  animation-delay: -3.5s;
-}
-
-/* закорючка рисуется и стирается */
-.hero__squiggle {
-  animation: draw-circle 1.2s ease-in-out 1s infinite alternate;
-}
-
-/* искорка мигает */
-.hero__sparks {
-  animation: twinkle 1.5s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-10rem) rotate(2deg);
-  }
-}
-
-@keyframes twinkle {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(0.6);
-    opacity: 0.4;
-  }
+.hero__sticker:hover {
+  scale: 1.08;
+  filter: drop-shadow(0 10rem 12rem rgb(0 0 0 / 0.35));
 }
 
 /* фильтры */
@@ -300,8 +220,6 @@ main {
   margin-top: 90rem;
 }
 
-/* обводка у фильтров — рисованная картинка-маска,
-   её закрашивает цвет текста кнопки, поэтому цветные версии картинок не нужны */
 .filters__button {
   position: relative;
   height: 51rem;
@@ -367,7 +285,6 @@ main {
   mask-image: url('../images/filters-outline-placement.svg');
 }
 
-/* выбранный фильтр и фильтр под курсором горят цветом категории вместе с обводкой */
 .filters__button:hover,
 .filters__button--active {
   color: var(--filter-color);
@@ -403,6 +320,7 @@ main {
   height: 40rem;
   padding: 0 24rem;
   font-size: 18rem;
+  color: var(--card-color);
 }
 
 .card__tag::before {
@@ -417,8 +335,8 @@ main {
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
 }
-/* currentColor — фоновый цвет элемента как текст */
 
+/* currentColor — фоновый цвет элемента как текст */
 .card__title {
   max-width: 400rem;
   margin: auto 0;
@@ -429,7 +347,6 @@ main {
   text-transform: uppercase;
 }
 
-/* цвет каждой категории */
 .card[data-filter='general'] {
   --card-color: var(--c-yellow);
 }
@@ -446,33 +363,38 @@ main {
   --card-color: var(--c-orange);
 }
 
-/* тег на карточке сразу горит цветом своей категории */
-.card__tag {
-  color: var(--card-color);
-}
-
-/* при наведении карточка заливается цветом, поэтому тег становится тёмным */
 .card__button:hover .card__tag {
   color: var(--c-grey);
 }
 
-/* при наведении карточка плавно становится цветной */
 .card__button:hover {
   color: var(--c-grey);
   background-color: var(--card-color);
   border-color: var(--card-color);
 }
 
-/* карточка плавно появляется, когда фильтр её показывает */
 .card {
   animation: card-show 0.4s ease-out;
 }
 
-@keyframes card-show {
-  from {
-    opacity: 0;
-    transform: translateY(20rem);
-  }
+.card[data-filter='general'] .card__tag::before,
+.card[data-filter='general'] .term__tag::before {
+  mask-image: url('../images/filters-outline-general.svg');
+}
+
+.card[data-filter='materials'] .card__tag::before,
+.card[data-filter='materials'] .term__tag::before {
+  mask-image: url('../images/filters-outline-materials.svg');
+}
+
+.card[data-filter='properties'] .card__tag::before,
+.card[data-filter='properties'] .term__tag::before {
+  mask-image: url('../images/filters-outline-properties.svg');
+}
+
+.card[data-filter='placement'] .card__tag::before,
+.card[data-filter='placement'] .term__tag::before {
+  mask-image: url('../images/filters-outline-placement.svg');
 }
 
 /* окошко термина */
@@ -495,13 +417,6 @@ main {
   animation: term-show 0.3s ease-out;
 }
 
-/* затемнение страницы под окошком */
-.term::backdrop {
-  background-color: rgb(44 40 37 / 0.8);
-}
-
-/* тег в окошке — цветная рисованная обводка */
-/* тег в окошке — та же рисованная обводка, закрашенная цветом категории */
 .term__tag {
   position: relative;
   display: flex;
@@ -540,25 +455,6 @@ main {
   width: 214rem;
 }
 
-.card[data-filter='general'] .card__tag::before,
-.card[data-filter='general'] .term__tag::before {
-  mask-image: url('../images/filters-outline-general.svg');
-}
-
-.card[data-filter='materials'] .card__tag::before,
-.card[data-filter='materials'] .term__tag::before {
-  mask-image: url('../images/filters-outline-materials.svg');
-}
-
-.card[data-filter='properties'] .card__tag::before,
-.card[data-filter='properties'] .term__tag::before {
-  mask-image: url('../images/filters-outline-properties.svg');
-}
-
-.card[data-filter='placement'] .card__tag::before,
-.card[data-filter='placement'] .term__tag::before {
-  mask-image: url('../images/filters-outline-placement.svg');
-}
 .term__title {
   margin-top: auto;
   font-family: var(--font-title);
@@ -577,14 +473,6 @@ main {
   line-height: 1.1;
 }
 
-@keyframes term-show {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-}
-
-/* крестик в левом верхнем углу окошка */
 .term__close {
   position: absolute;
   top: 50rem;
@@ -659,7 +547,6 @@ main {
   color: var(--c-grey);
 }
 
-/* форма: заголовок на всю ширину, под ним поле и кнопка в одну строку */
 .footer__form {
   position: absolute;
   top: 158rem;
@@ -690,12 +577,13 @@ main {
   font-size: 19rem;
   color: inherit;
   background: none;
-  border: 2.9rem solid var(--c-forest);
+  border: 2.9rem solid currentColor;
   border-radius: 57rem;
 }
 
 .footer__input::placeholder {
-  color: rgb(255 246 237 / 0.75);
+  color: inherit;
+  opacity: 0.75;
 }
 
 .footer__submit {
@@ -726,7 +614,6 @@ main {
   transform: scale(1.1);
 }
 
-/* стикеры в подвале покачиваются, при наведении увеличиваются и отбрасывают тень */
 .footer__sticker,
 .footer__strokes,
 .footer__spark,
@@ -837,32 +724,6 @@ main {
   animation: draw-circle 1.2s ease-in-out 1s infinite alternate;
 }
 
-/* при наведении стикер чуть увеличивается и отбрасывает тень */
-.hero__sticker {
-  transition:
-    scale 0.3s,
-    filter 0.3s;
-}
-
-.hero__sticker:hover {
-  scale: 1.08;
-  filter: drop-shadow(0 10rem 12rem rgb(0 0 0 / 0.35));
-}
-
-/* если в системе выключена анимация, стикеры стоят на месте */
-@media (prefers-reduced-motion: reduce) {
-  .hero__sticker,
-  .hero__squiggle,
-  .hero__sparks,
-  .footer__sticker,
-  .footer__spark,
-  .footer__squiggle,
-  .card,
-  .term:popover-open {
-    animation: none;
-  }
-}
-
 /* форма. соо спрятано */
 .footer__message {
   display: none;
@@ -876,17 +737,24 @@ main {
   display: block;
 }
 
-/* ==========================================================================
-   СТРАНИЦА «О НАС»
-   Секции идут друг за другом, всё внутри стоит по координатам из макета:
-   left — X в Фигме, top — Y в Фигме минус верх секции
-   ========================================================================== */
+.footer--about {
+  background-color: var(--c-green);
+  color: var(--c-forest);
+}
 
+.footer--dict {
+  color: var(--c-dark-pink);
+}
+
+.footer--about .footer__submit {
+  background-image: url('../images/about-icon-arrow.svg');
+}
+
+/* о нас */
 .about main {
   padding: 0;
 }
 
-/* обводка «О нас» в шапке */
 .about .header__link--active::before {
   top: -36rem;
   left: -18rem;
@@ -896,7 +764,6 @@ main {
   transform: none;
 }
 
-/* общий класс для стикеров на этой странице: покачиваются и реагируют на наведение */
 .sticker {
   position: absolute;
   animation: float 4s ease-in-out infinite;
@@ -918,7 +785,7 @@ main {
   filter: drop-shadow(0 10rem 12rem rgb(0 0 0 / 0.35));
 }
 
-/* первый экран: та же разметка, что в словаре, другой цвет и стикеры */
+/* о нас: первый экран */
 .hero--about {
   height: 462rem;
   margin: 86rem 56rem 0;
@@ -1009,7 +876,7 @@ main {
   width: 88rem;
 }
 
-/* что такое stuck: секция от 647 до 1400 по макету */
+/* о нас: что такое стак */
 .intro {
   position: relative;
   height: 753rem;
@@ -1104,14 +971,13 @@ main {
   width: 94rem;
 }
 
-/* у нас можно: секция от 1400 до 3060 по макету */
+/* о нас: у нас можно */
 .can {
   position: relative;
   height: 1660rem;
   overflow: hidden;
 }
 
-/* повёрнутые надписи ставим по центру: left и top — центр надписи в макете */
 .can__title-line,
 .can__text,
 .team__title-line,
@@ -1152,8 +1018,6 @@ main {
   transform: rotate(-3deg);
 }
 
-/* точки на листе: картинка из Фигмы уже наклонена на 3 градуса,
-   а лист тоже повёрнут, поэтому поворачиваем точки обратно */
 .can__notebook::before {
   content: '';
   position: absolute;
@@ -1222,67 +1086,6 @@ main {
   transform: translate(-50%, -50%) rotate(-3deg);
 }
 
-/* команда: секция от 3060 до подвала */
-.team {
-  position: relative;
-  height: 580rem;
-}
-
-.team__title-line--1 {
-  top: 165rem;
-  left: 673rem;
-  transform: translate(-50%, -50%) rotate(-1deg);
-}
-
-.team__title-line--2 {
-  top: 257rem;
-  left: 940rem;
-  transform: translate(-50%, -50%) rotate(-1deg);
-}
-
-.team__note {
-  top: 287rem;
-  left: 532rem;
-  width: 410rem;
-  font-family: var(--font-hand);
-  font-size: 34rem;
-  line-height: 0.75;
-  color: var(--c-yellow);
-  transform: translate(-50%, -50%) rotate(2deg);
-}
-
-.team__kolya {
-  top: 100rem;
-  left: 88rem;
-  width: 208rem;
-}
-
-.team__masha {
-  top: -3rem;
-  left: 1160rem;
-  width: 208rem;
-}
-
-.team__anya {
-  top: 230rem;
-  left: 858rem;
-  width: 208rem;
-}
-
-/* подвал: такой же, как в словаре, меняется только цвет фона */
-.footer--about {
-  background-color: var(--c-green);
-  color: var(--c-forest);
-}
-
-/* если в системе выключена анимация, стикеры этой страницы стоят на месте */
-@media (prefers-reduced-motion: reduce) {
-  .sticker {
-    animation: none;
-  }
-}
-
-/* новые стикеры в блокноте */
 .can__cursor {
   top: 563rem;
   left: 752rem;
@@ -1349,7 +1152,53 @@ main {
   width: 132rem;
 }
 
-/* новые стикеры у команды */
+/* о нас: команда */
+.team {
+  position: relative;
+  height: 580rem;
+}
+
+.team__title-line--1 {
+  top: 165rem;
+  left: 673rem;
+  transform: translate(-50%, -50%) rotate(-1deg);
+}
+
+.team__title-line--2 {
+  top: 257rem;
+  left: 940rem;
+  transform: translate(-50%, -50%) rotate(-1deg);
+}
+
+.team__note {
+  top: 287rem;
+  left: 532rem;
+  width: 410rem;
+  font-family: var(--font-hand);
+  font-size: 34rem;
+  line-height: 0.75;
+  color: var(--c-yellow);
+  transform: translate(-50%, -50%) rotate(2deg);
+}
+
+.team__kolya {
+  top: 100rem;
+  left: 88rem;
+  width: 208rem;
+}
+
+.team__masha {
+  top: -3rem;
+  left: 1160rem;
+  width: 208rem;
+}
+
+.team__anya {
+  top: 230rem;
+  left: 858rem;
+  width: 208rem;
+}
+
 .team__sparkle {
   top: -65rem;
   left: 263rem;
@@ -1386,7 +1235,6 @@ main {
   width: 59rem;
 }
 
-/* штрихи стоят, закорючка рисуется, искорка мигает — как в баннере */
 .team__strokes,
 .team__squiggle,
 .team__spark {
@@ -1414,21 +1262,63 @@ main {
   animation: twinkle 1.5s ease-in-out infinite;
 }
 
-.footer--about .footer__form {
-  color: var(--c-forest);
+/* анимации */
+@keyframes draw-circle {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
 }
 
-.footer--about .footer__input::placeholder {
-  color: var(--c-forest);
-  opacity: 0.75;
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10rem) rotate(2deg);
+  }
 }
 
-/* кнопка со стрелкой в подвале в цветах этой страницы */
-.footer--about .footer__submit {
-  background-image: url('../images/about-icon-arrow.svg');
+@keyframes twinkle {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.6);
+    opacity: 0.4;
+  }
 }
 
+@keyframes card-show {
+  from {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+}
+
+@keyframes term-show {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* если в системе выключена анимация */
 @media (prefers-reduced-motion: reduce) {
+  .hero__sticker,
+  .hero__squiggle,
+  .hero__sparks,
+  .footer__sticker,
+  .footer__spark,
+  .footer__squiggle,
+  .card,
+  .term:popover-open,
+  .sticker,
   .team__squiggle,
   .team__spark {
     animation: none;

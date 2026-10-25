@@ -272,13 +272,13 @@
     border-radius: 30rem 30rem 0 0;
   }
 
-  .footer__school,
+  .footer__hse,
   .footer__teachers {
     top: 24rem;
     font-size: 13rem;
   }
 
-  .footer__school {
+  .footer__hse {
     left: 15rem;
     width: 130rem;
   }
@@ -448,7 +448,7 @@
     transform: scale(0.618);
   }
 
-  /* что такое stuck */
+  /* что такое стак */
   .intro {
     height: 719rem;
   }
