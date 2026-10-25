@@ -2,27 +2,28 @@
   box-sizing: border-box;
 }
 
-/* псевдокласс
+/* псевдокласс  */
 :root {
-  --c-cream: #f7f1ef;
-  --c-green: #1e3a2b;
+  --c-yellow: #ffde3b;
+  --c-green: #bdea29;
   --c-pink: #ffc2d1;
-  --c-liliac: #b9a6f2;
-  --c-pink-soft: #ffc1d1;
-  --c-butter: #ffd66b;
-  --c-lime: #c9e265;
-  --c-peach: #ffc98f;
+  --c-orange: #ee4c23;
+  --c-blue: #77e1ff;
+  --c-white: #fff6ed;
+  --c-grey: #2c2825;
 
   --gap: clamp(16px, 4vw, 56px);
-  --radius: clamp(16px, 2vw, 28 px);
+  --radius: clamp(16px, 2vw, 28px);
 }
 
 html {
-  font-size: calc(1vw / 14.4);
+  font-size: calc(1vw / 12.8);
 }
 body {
   font-family: 'PT Root UI', Arial, Helvetica, sans-serif;
   font-size: 18rem;
+  background-color: var(--c-grey);
+  color: var(--c-white);
 }
 
 /* заглушка */
