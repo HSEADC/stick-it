@@ -3,46 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="/src/stylesheets/layout.css" /> -->
-    <title>главная</title>
+    <meta name="description" content="СТАК! — медиа о стикер-культуре. Готовим статьи, словарь и гайды. Оставь почту, чтобы узнать о запуске." />
+    <meta name="theme-color" content="#2c2825" />
+    <title>СТАК! — скоро приклеимся</title>
+    <link rel="stylesheet" href="stylesheets/coming-soon.css" />
+    <script type="module" src="javascripts/coming-soon.js"></script>
   </head>
-  <body class="index">
-    <h1>Заглушка</h1>
-    <!-- шпаргалка по навигации -->
-    <!-- <h1>главная</h1>
-
-    <h2>разделы</h2>
-    <ul>
-      <li><a href="pages/articles.html">статьи</a></li>
-      <li><a href="pages/dictionary.html">словарь</a></li>
-      <li><a href="pages/tests.html">тесты</a></li>
-    </ul> -->
-
-    <!-- modify this form HTML and place wherever you want your form -->
-    <div data-fs-success>Thanks for your submission!</div>
-    <div data-fs-error>Oops! There was a problem submitting your form.</div>
-    <form id="my-form">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" data-fs-field />
-      <span data-fs-error="email"></span>
-      <label for="message">Message:</label>
-      <input type="text" id="message" name="message" data-fs-field />
-      <span data-fs-error="message"></span>
-      <button type="submit" data-fs-submit-btn>Submit</button>
-    </form>
-
-    <!-- Place these scripts at the end of the body tag -->
-    <script>
-      window.formspree =
-        window.formspree ||
-        function () {
-          (formspree.q = formspree.q || []).push(arguments);
-        };
-      formspree('initForm', {
-        formElement: '#my-form',
-        formId: 'xoejnobb'
-      });
-    </script>
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+  <body class="index coming">
+    <main class="coming-journey" id="main-content">
+      <div class="coming-stage">
+        <div class="coming-canvas">
+          <header class="coming-header">
+            <h1>стак!</h1>
+            <p>медиа, которое систематизирует<br class="coming-desktop-break" /> информацию о стикерах</p>
+          </header>
+          <section class="coming-signup" aria-labelledby="signup-title">
+            <img class="coming-paper" src="images/coming-paper.svg" alt="" draggable="false" decoding="async" />
+            <h2 id="signup-title" class="coming-form-title"><img src="images/coming-form-title.svg" alt="Застолби себе место" /></h2>
+            <form class="coming-form" action="https://formspree.io/f/xoejnobb" method="post" data-subscribe>
+              <label class="coming-sr-only" for="launch-name">Имя</label>
+              <input id="launch-name" name="name" type="text" placeholder="имя" autocomplete="given-name" maxlength="100" required aria-describedby="launch-status" />
+              <label class="coming-sr-only" for="launch-email">Электронная почта</label>
+              <input id="launch-email" name="email" type="email" placeholder="e-mail" autocomplete="email" maxlength="254" required aria-describedby="launch-status" />
+              <button type="submit">отправить</button>
+              <p class="coming-status" id="launch-status" role="status" aria-live="polite" aria-atomic="true"></p>
+            </form>
+          <img class="coming-asset " src="images/about-can-cursor.svg" alt="" draggable="false" decoding="async" style="--x:51;--y:488;--w:58;--mx:26;--my:235;--mw:49" />
+          <img class="coming-asset " src="images/about-can-ring.svg" alt="" draggable="false" decoding="async" style="--x:112;--y:515;--w:28;--mx:80;--my:259;--mw:24" />
+          <img class="coming-asset float" src="images/about-tape.svg" alt="" draggable="false" decoding="async" style="--x:59;--y:562;--w:164;--mx:33;--my:294;--mw:139" />
+          <img class="coming-asset float" src="images/about-globe.svg" alt="" draggable="false" decoding="async" style="--x:350;--y:552;--w:68;--mx:280;--my:291;--mw:58" />
+          <img class="coming-asset " src="images/about-hash.svg" alt="" draggable="false" decoding="async" style="--x:402;--y:568;--w:59;--mx:324;--my:304;--mw:50" />
+          <img class="coming-asset " src="images/footer-strokes.svg" alt="" draggable="false" decoding="async" style="--x:35;--y:232;--w:34;--mx:18;--my:36;--mw:29" />
+          </section>
+          <div class="coming-states">
+            <section class="coming-panel coming-panel--articles" aria-labelledby="articles-title">
+              <h2 class="coming-caption" id="articles-title">Собираем для вас статьи по крутым проектам</h2>
+              <img class="coming-asset " src="images/coming-obey.svg" alt="" draggable="false" decoding="async" style="--x:466.511;--y:420.815;--w:182.991;--mx:7.800;--my:193.243;--mw:131.353" />
+              <img class="coming-asset " src="images/coming-book.svg" alt="" draggable="false" decoding="async" style="--x:555.296;--y:440.944;--w:176.830;--mx:51.628;--my:208.778;--mw:126.878" />
+              <img class="coming-asset " src="images/coming-card-yellow.svg" alt="" draggable="false" decoding="async" style="--x:513.195;--y:503.909;--w:72.497;--mx:27.573;--my:255.945;--mw:51.944" />
+              <img class="coming-asset " src="images/coming-hello.svg" alt="" draggable="false" decoding="async" style="--x:866.301;--y:509.970;--w:207.211;--mx:224.413;--my:266.436;--mw:158.710" />
+              <img class="coming-asset " src="images/coming-card-pink.svg" alt="" draggable="false" decoding="async" style="--x:877.761;--y:579.238;--w:99.342;--mx:238.369;--my:324.631;--mw:73.699" />
+              <img class="coming-asset float" src="images/coming-buff.svg" alt="" draggable="false" decoding="async" style="--x:919.385;--y:438.648;--w:155.681;--mx:272.228;--my:215.995;--mw:113.310" />
+              <img class="coming-asset mascot" src="images/girl-green-book.svg" alt="" draggable="false" decoding="async" style="--x:653.94;--y:252.062;--w:349.441;--mx:91.051;--my:76.406;--mw:251.262" />
+              <img class="coming-asset float" src="images/coming-lads.svg" alt="" draggable="false" decoding="async" style="--x:588.177;--y:554.840;--w:148.384;--mx:72.129;--my:294.576;--mw:107.712" />
+              <img class="coming-asset float" src="images/coming-punctuation.svg" alt="" draggable="false" decoding="async" style="--x:633.443;--y:270.283;--w:88.299;--mx:79.317;--my:80.757;--mw:63.963" />
+              <img class="coming-asset " src="images/coming-eyes.svg" alt="" draggable="false" decoding="async" style="--x:597.414;--y:328.636;--w:58.861;--mx:52.594;--my:122.484;--mw:42.745" />
+              <img class="coming-asset float" src="images/dict-spark.svg" alt="" draggable="false" decoding="async" style="--x:970;--y:334;--w:33;--mx:311.870;--my:142.576;--mw:23.710" />
+              <img class="coming-asset " src="images/dict-squiggle.svg" alt="" draggable="false" decoding="async" style="--x:1011;--y:393;--w:46;--mx:333.806;--my:194.618;--mw:33.124" />
+              <img class="coming-asset " src="images/footer-strokes.svg" alt="" draggable="false" decoding="async" style="--x:626;--y:390;--w:32;--mx:74;--my:188;--mw:24" />
+            </section>
+            <section class="coming-panel coming-panel--dictionary" aria-labelledby="dictionary-title">
+              <h2 class="coming-caption" id="dictionary-title">Формируем карточки для каждого термина</h2>
+              <img class="coming-asset float" src="images/dict-sticker-bombing.svg" alt="" draggable="false" decoding="async" style="--x:582.673;--y:242.399;--w:197.057;--mx:43.729;--my:35.039;--mw:139.567" />
+              <img class="coming-asset float" src="images/dict-kiss-cut.svg" alt="" draggable="false" decoding="async" style="--x:886.355;--y:257.861;--w:172.453;--mx:259.892;--my:45.982;--mw:122.778" />
+              <img class="coming-asset " src="images/dict-card-green.svg" alt="" draggable="false" decoding="async" style="--x:602.149;--y:547.411;--w:102.097;--mx:57.597;--my:252.101;--mw:72.657" />
+              <img class="coming-asset " src="images/dict-card-blue.svg" alt="" draggable="false" decoding="async" style="--x:923.199;--y:513.934;--w:95.965;--mx:286.100;--my:228.280;--mw:68.294" />
+              <img class="coming-asset mascot" src="images/girl-yellow-cards.svg" alt="" draggable="false" decoding="async" style="--x:632.209;--y:253.966;--w:363.1;--mx:78.983;--my:43.272;--mw:258.401" />
+              <img class="coming-asset float" src="images/dict-paste-up.svg" alt="" draggable="false" decoding="async" style="--x:530.225;--y:449.0;--w:194.404;--mx:6.494;--my:182.713;--mw:138.378" />
+              <img class="coming-asset " src="images/dict-question-yellow.svg" alt="" draggable="false" decoding="async" style="--x:539;--y:379;--w:84;--mx:12.877;--my:130.577;--mw:58.873" />
+              <img class="coming-asset float" src="images/dict-question-green.svg" alt="" draggable="false" decoding="async" style="--x:968;--y:457;--w:80;--mx:318.716;--my:186.782;--mw:56.050" />
+              <img class="coming-asset " src="images/dict-spark.svg" alt="" draggable="false" decoding="async" style="--x:552;--y:328;--w:29;--mx:29;--my:99;--mw:21" />
+              <img class="coming-asset " src="images/dict-squiggle.svg" alt="" draggable="false" decoding="async" style="--x:1001;--y:395;--w:47;--mx:340.288;--my:141.718;--mw:35.525" />
+            </section>
+            <section class="coming-panel coming-panel--guides" aria-labelledby="guides-title">
+              <h2 class="coming-caption" id="guides-title">Готовим для вас понятные гайды по созданию стикеров</h2>
+              <img class="coming-asset float" src="images/coming-how.svg" alt="" draggable="false" decoding="async" style="--x:562.802;--y:286.967;--w:186.115;--mx:38.165;--my:75.763;--mw:126.982" />
+              <img class="coming-asset float" src="images/coming-hash.svg" alt="" draggable="false" decoding="async" style="--x:981.949;--y:349.853;--w:86.478;--mx:324.129;--my:118.751;--mw:59.002" />
+              <img class="coming-asset " src="images/coming-oh.svg" alt="" draggable="false" decoding="async" style="--x:929.707;--y:476.029;--w:113.400;--mx:288.502;--my:204.803;--mw:77.371" />
+              <img class="coming-asset " src="images/coming-pen-blue.svg" alt="" draggable="false" decoding="async" style="--x:920.457;--y:515.844;--w:155.432;--mx:282.182;--my:231.943;--mw:106.047" />
+              <img class="coming-asset " src="images/coming-pen-green.svg" alt="" draggable="false" decoding="async" style="--x:936.527;--y:555.070;--w:161.418;--mx:293.174;--my:258.704;--mw:110.131" />
+              <img class="coming-asset " src="images/coming-card-orange.svg" alt="" draggable="false" decoding="async" style="--x:551.925;--y:581.456;--w:134.019;--mx:30.768;--my:276.707;--mw:91.438" />
+              <img class="coming-asset mascot" src="images/girl-pink-paper.svg" alt="" draggable="false" decoding="async" style="--x:639.207;--y:292.206;--w:355.157;--mx:90.307;--my:79.357;--mw:242.315" />
+              <img class="coming-asset float" src="images/coming-tape.svg" alt="" draggable="false" decoding="async" style="--x:537.519;--y:514.749;--w:109.130;--mx:20.929;--my:231.193;--mw:74.457" />
+              <img class="coming-asset " src="images/dict-question-yellow.svg" alt="" draggable="false" decoding="async" style="--x:576;--y:432;--w:90;--mx:48.556;--my:172.319;--mw:64.562" />
+              <img class="coming-asset float" src="images/coming-star.svg" alt="" draggable="false" decoding="async" style="--x:731.995;--y:629.962;--w:100.593;--mx:153.609;--my:309.800;--mw:68.632" />
+              <img class="coming-asset " src="images/dict-squiggle.svg" alt="" draggable="false" decoding="async" style="--x:955;--y:315;--w:52;--mx:306.666;--my:99.651;--mw:34.505" />
+              <img class="coming-asset " src="images/dict-spark.svg" alt="" draggable="false" decoding="async" style="--x:552;--y:395;--w:35;--mx:30.720;--my:149.162;--mw:24.556" />
+              <img class="coming-asset " src="images/footer-strokes.svg" alt="" draggable="false" decoding="async" style="--x:544;--y:468;--w:43;--mx:27;--my:191;--mw:29" />
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="coming-footer" aria-label="Информация о проекте">
+      <div class="coming-footer-canvas">
+        <p class="coming-school">hse art and design school</p>
+        <nav class="coming-nav" aria-label="Разделы сайта">
+          <a href="pages/about.html">О нас</a>
+          <a href="pages/dictionary.html">Словарь</a>
+        </nav>
+        <p class="coming-teachers">Загуменкова Софья<br />Комкова Анна</p>
+        <form class="coming-footer-form" action="https://formspree.io/f/xoejnobb" method="post" data-subscribe aria-labelledby="updates-title">
+          <h2 id="updates-title">Узнавай об обновлениях!</h2>
+          <div class="coming-footer-fields">
+            <label class="coming-sr-only" for="updates-email">Электронная почта</label>
+            <input id="updates-email" name="email" type="email" placeholder="Введи свой e-mail" autocomplete="email" maxlength="254" required aria-describedby="updates-status" />
+            <button type="submit" aria-label="Подписаться на обновления"><img src="images/icon-arrow.svg" alt="" /></button>
+          </div>
+          <p class="coming-status" id="updates-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        </form>
+        <div class="coming-social" aria-label="Социальные сети">
+          <a href="https://t.me/stuck_media" target="_blank" rel="noopener noreferrer" aria-label="СТАК! в Telegram"><img src="images/icon-tg.svg" alt="" /></a>
+          <a href="https://vk.ru/club242082911" target="_blank" rel="noopener noreferrer" aria-label="СТАК! во ВКонтакте"><img src="images/icon-vk.svg" alt="" /></a>
+        </div>
+          <img class="coming-asset footer-mascot" src="images/dict-footer-mascot.svg" alt="" draggable="false" decoding="async" style="--x:4;--y:249;--w:239;--mx:-16;--my:427;--mw:199" />
+          <img class="coming-asset " src="images/footer-hash.svg" alt="" draggable="false" decoding="async" style="--x:-1;--y:432;--w:57;--mx:-12;--my:554;--mw:43" />
+          <img class="coming-asset " src="images/footer-at.svg" alt="" draggable="false" decoding="async" style="--x:478;--y:426;--w:134;--mx:-13;--my:617;--mw:131" />
+          <img class="coming-asset float" src="images/footer-anya.svg" alt="" draggable="false" decoding="async" style="--x:177;--y:388;--w:187;--mx:120;--my:513;--mw:167" />
+          <img class="coming-asset " src="images/footer-masha.svg" alt="" draggable="false" decoding="async" style="--x:305;--y:438;--w:135;--mx:229;--my:532;--mw:120" />
+          <img class="coming-asset float" src="images/footer-kolya.svg" alt="" draggable="false" decoding="async" style="--x:405;--y:391;--w:220;--mx:131;--my:584;--mw:202" />
+          <img class="coming-asset " src="images/footer-doodle.svg" alt="" draggable="false" decoding="async" style="--x:588;--y:463;--w:86;--mx:347;--my:681;--mw:82" />
+          <img class="coming-asset float" src="images/footer-sparkle.svg" alt="" draggable="false" decoding="async" style="--x:630;--y:394;--w:62;--mx:342;--my:573;--mw:56" />
+          <img class="coming-asset " src="images/footer-flower.svg" alt="" draggable="false" decoding="async" style="--x:242;--y:462;--w:59;--mx:187;--my:562;--mw:48" />
+          <img class="coming-asset " src="images/footer-question.svg" alt="" draggable="false" decoding="async" style="--x:691;--y:460;--w:49;--mx:360;--my:628;--mw:44" />
+          <img class="coming-asset " src="images/footer-strokes.svg" alt="" draggable="false" decoding="async" style="--x:135;--y:444;--w:40;--mx:106;--my:563;--mw:36" />
+          <img class="coming-asset " src="images/dict-spark.svg" alt="" draggable="false" decoding="async" style="--x:455;--y:463;--w:28;--mx:129;--my:623;--mw:25" />
+          <img class="coming-asset " src="images/dict-squiggle.svg" alt="" draggable="false" decoding="async" style="--x:374;--y:374;--w:35;--mx:361;--my:505;--mw:33" />
+      </div>
+    </footer>
   </body>
 </html>
