@@ -13,6 +13,9 @@
   --c-grey: #2c2825;
   --c-forest: #68850b;
   --c-dark-pink: #eb3779;
+
+  --gap: clamp(16px, 4vw, 56px);
+  --radius: clamp(16px, 2vw, 28px);
   --font-title: 'UNCAGE', Arial, sans-serif;
   --font-hand: 'Ura Bum Bum SP', cursive;
 }
@@ -87,6 +90,21 @@ main {
   height: 73rem;
   background: url('../images/dict-outline.svg') center / contain no-repeat;
   transform: translate(-50%, -38%);
+}
+
+@keyframes draw-circle {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* отступы страницы по бокам */
+main {
+  padding: 0 56rem;
 }
 
 /* первый экран */
@@ -210,6 +228,75 @@ main {
 .hero__sticker:hover {
   scale: 1.08;
   filter: drop-shadow(0 10rem 12rem rgb(0 0 0 / 0.35));
+}
+.hero__sticker {
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero__mascot {
+  animation-duration: 6s;
+}
+
+.hero__bombing {
+  animation-delay: -1s;
+}
+
+.hero__kiss-cut {
+  animation-delay: -2s;
+}
+
+.hero__paste-up {
+  animation-delay: -3s;
+}
+
+.hero__question--1 {
+  animation-delay: -1.5s;
+}
+
+.hero__question--2 {
+  animation-delay: -2.5s;
+}
+
+.hero__card--blue {
+  animation-delay: -0.5s;
+}
+
+.hero__card--green {
+  animation-delay: -3.5s;
+}
+
+/* закорючка рисуется и стирается */
+.hero__squiggle {
+  animation: draw-circle 1.2s ease-in-out 1s infinite alternate;
+}
+
+/* искорка мигает */
+.hero__sparks {
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10rem) rotate(2deg);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.6);
+    opacity: 0.4;
+  }
 }
 
 /* фильтры */
@@ -453,6 +540,26 @@ main {
 
 .card[data-filter='placement'] .term__tag {
   width: 214rem;
+}
+
+.card[data-filter='general'] .card__tag::before,
+.card[data-filter='general'] .term__tag::before {
+  mask-image: url('../images/filters-outline-general.svg');
+}
+
+.card[data-filter='materials'] .card__tag::before,
+.card[data-filter='materials'] .term__tag::before {
+  mask-image: url('../images/filters-outline-materials.svg');
+}
+
+.card[data-filter='properties'] .card__tag::before,
+.card[data-filter='properties'] .term__tag::before {
+  mask-image: url('../images/filters-outline-properties.svg');
+}
+
+.card[data-filter='placement'] .card__tag::before,
+.card[data-filter='placement'] .term__tag::before {
+  mask-image: url('../images/filters-outline-placement.svg');
 }
 
 .term__title {
@@ -722,6 +829,32 @@ main {
   left: 479rem;
   width: 45rem;
   animation: draw-circle 1.2s ease-in-out 1s infinite alternate;
+}
+
+/* при наведении стикер чуть увеличивается и отбрасывает тень */
+.hero__sticker {
+  transition:
+    scale 0.3s,
+    filter 0.3s;
+}
+
+.hero__sticker:hover {
+  scale: 1.08;
+  filter: drop-shadow(0 10rem 12rem rgb(0 0 0 / 0.35));
+}
+
+/* если в системе выключена анимация, стикеры стоят на месте */
+@media (prefers-reduced-motion: reduce) {
+  .hero__sticker,
+  .hero__squiggle,
+  .hero__sparks,
+  .footer__sticker,
+  .footer__spark,
+  .footer__squiggle,
+  .card,
+  .term:popover-open {
+    animation: none;
+  }
 }
 
 /* форма. соо спрятано */
